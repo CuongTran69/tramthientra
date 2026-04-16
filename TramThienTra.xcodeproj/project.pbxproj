@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0246B9A74238114ACA04F5B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */; };
+		1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C2CA4CD5125D42B9AF046 /* NotificationService.swift */; };
+		1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */; };
+		22782413F9E182E149FA267D /* ThoiGian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */; };
+		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
+		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
+		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
+		428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */; };
+		45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D5EEF66C34A3E948966C /* SyncService.swift */; };
+		4C6D1CE44A1BEC15D0764A95 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */; };
+		5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE49956611304772681CBB /* BuongBoViewModel.swift */; };
+		5533AE86AFC667A4B82DDB8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2300CB6A0022D62658BAEB09 /* SnapKit */; };
+		5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58B7359C89E0249337DD5F /* SettingsView.swift */; };
+		5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE023640EA5125DD8F119E30 /* StreakViewModel.swift */; };
+		7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FEA37D704438F92E2B94A /* AppUser.swift */; };
+		83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* CayThienView.swift */; };
+		8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */; };
+		938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */; };
+		A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CE552EA5A94449E88C4D8 /* AuthService.swift */; };
+		A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */; };
+		AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */; };
+		B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */; };
+		B86955EAAF725186FEAE8914 /* TraXongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6216DB8498C3720CFCF5FC4D /* TraXongView.swift */; };
+		BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */; };
+		CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */; };
+		CCF1D72CC697778C8E76BDB9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123799F7D2A4641BD12A789 /* Constants.swift */; };
+		CF694433CFAA76E26FCAF407 /* AppleDangNhapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */; };
+		D059D168AE3FD3D9223B6E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD163F9E0094D003BC976AFF /* Assets.xcassets */; };
+		D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CE06981925B6E2448C76B /* NenDongView.swift */; };
+		D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */; };
+		F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0475BFB114C60C9BB1994A /* HistoryView.swift */; };
+		F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188AA5D389C237F588BFAE9 /* BuongBoView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D429BEEF7DFC98520D81699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8D5D9D30E243E621ED255D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4FFFF23E4D2E7D815CB50FD;
+			remoteInfo = TramThienTra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		074C2CA4CD5125D42B9AF046 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeLog.swift; sourceTree = "<group>"; };
+		15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhoiTanView.swift; sourceTree = "<group>"; };
+		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
+		4123799F7D2A4641BD12A789 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGian.swift; sourceTree = "<group>"; };
+		4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		537FEA37D704438F92E2B94A /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		6216DB8498C3720CFCF5FC4D /* TraXongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraXongView.swift; sourceTree = "<group>"; };
+		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B7ADFD90BFDC40BD010689 /* CayThienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayThienView.swift; sourceTree = "<group>"; };
+		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutGiotNuocView.swift; sourceTree = "<group>"; };
+		9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A188AA5D389C237F588BFAE9 /* BuongBoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoView.swift; sourceTree = "<group>"; };
+		A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatViewModel.swift; sourceTree = "<group>"; };
+		BA0475BFB114C60C9BB1994A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BB58B7359C89E0249337DD5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BE023640EA5125DD8F119E30 /* StreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakViewModel.swift; sourceTree = "<group>"; };
+		BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramThienTraTests.swift; sourceTree = "<group>"; };
+		C3EE49956611304772681CBB /* BuongBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoViewModel.swift; sourceTree = "<group>"; };
+		C77CE552EA5A94449E88C4D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyViewModel.swift; sourceTree = "<group>"; };
+		D31CE06981925B6E2448C76B /* NenDongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NenDongView.swift; sourceTree = "<group>"; };
+		D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = droplet.wav; sourceTree = "<group>"; };
+		DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatView.swift; sourceTree = "<group>"; };
+		DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
+		DD163F9E0094D003BC976AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E16CCB53D08B6A8A511AB84F /* TramThienTra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TramThienTra.entitlements; sourceTree = "<group>"; };
+		F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramThienTraApp.swift; sourceTree = "<group>"; };
+		F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B8789175F5861CD81F9EBF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5533AE86AFC667A4B82DDB8E /* SnapKit in Frameworks */,
+				4C6D1CE44A1BEC15D0764A95 /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06272493A9A41CD5968B611E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				707EEF0995934D58FD9F1CCC /* TramThienTra.app */,
+				63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		146BA32D9F7F2937874FDE91 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C77CE552EA5A94449E88C4D8 /* AuthService.swift */,
+				4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */,
+				074C2CA4CD5125D42B9AF046 /* NotificationService.swift */,
+				21A5D5EEF66C34A3E948966C /* SyncService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1E01665E274697C971396D2A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				537FEA37D704438F92E2B94A /* AppUser.swift */,
+				150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		406CAF8096413F608F9DFA87 /* TraThat */ = {
+			isa = PBXGroup;
+			children = (
+				DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */,
+				6216DB8498C3720CFCF5FC4D /* TraXongView.swift */,
+			);
+			path = TraThat;
+			sourceTree = "<group>";
+		};
+		474F2ED6504C4EC78809E72A /* TichLuy */ = {
+			isa = PBXGroup;
+			children = (
+				8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */,
+				F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */,
+			);
+			path = TichLuy;
+			sourceTree = "<group>";
+		};
+		49FD87D76F9F57B3A656A268 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */,
+				66B7ADFD90BFDC40BD010689 /* CayThienView.swift */,
+				D31CE06981925B6E2448C76B /* NenDongView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4F9FEAFE4FAC4FE47B760CEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9697991CF381BC394F076CC9 /* BuongBo */,
+				49FD87D76F9F57B3A656A268 /* Components */,
+				A0DE6AD1ED43A64FF32EE12B /* History */,
+				7CC94DF8AF39AE86AC69778C /* Onboarding */,
+				ED51AF698E09E6F5B5781AD1 /* Settings */,
+				474F2ED6504C4EC78809E72A /* TichLuy */,
+				406CAF8096413F608F9DFA87 /* TraThat */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C3191BB8A54EB6C9E796DBE /* TramThienTra */ = {
+			isa = PBXGroup;
+			children = (
+				1FB5D810D6C6589ED10474D6 /* Info.plist */,
+				E16CCB53D08B6A8A511AB84F /* TramThienTra.entitlements */,
+				B55783BBDC18B7ACCA1993A0 /* App */,
+				1E01665E274697C971396D2A /* Models */,
+				CEEAF54778AED6D79D6447AB /* Resources */,
+				146BA32D9F7F2937874FDE91 /* Services */,
+				B98620473A8CBC77D1213C4F /* Utilities */,
+				670990F94266D51CE12DDD08 /* ViewModels */,
+				4F9FEAFE4FAC4FE47B760CEF /* Views */,
+			);
+			path = TramThienTra;
+			sourceTree = "<group>";
+		};
+		670990F94266D51CE12DDD08 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE49956611304772681CBB /* BuongBoViewModel.swift */,
+				BE023640EA5125DD8F119E30 /* StreakViewModel.swift */,
+				CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */,
+				AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7CC94DF8AF39AE86AC69778C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		81FCF159DC85D97ADD9C144B /* TramThienTraTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */,
+			);
+			path = TramThienTraTests;
+			sourceTree = "<group>";
+		};
+		89754E9C1F33D03538D74E51 = {
+			isa = PBXGroup;
+			children = (
+				5C3191BB8A54EB6C9E796DBE /* TramThienTra */,
+				81FCF159DC85D97ADD9C144B /* TramThienTraTests */,
+				06272493A9A41CD5968B611E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9697991CF381BC394F076CC9 /* BuongBo */ = {
+			isa = PBXGroup;
+			children = (
+				A188AA5D389C237F588BFAE9 /* BuongBoView.swift */,
+				15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */,
+			);
+			path = BuongBo;
+			sourceTree = "<group>";
+		};
+		A0DE6AD1ED43A64FF32EE12B /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */,
+				BA0475BFB114C60C9BB1994A /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B55783BBDC18B7ACCA1993A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */,
+				F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B98620473A8CBC77D1213C4F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4123799F7D2A4641BD12A789 /* Constants.swift */,
+				45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CEEAF54778AED6D79D6447AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD163F9E0094D003BC976AFF /* Assets.xcassets */,
+				D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED51AF698E09E6F5B5781AD1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BB58B7359C89E0249337DD5F /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33AD8AF6C32AA153B0509712 /* TramThienTraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 858AEC4365112B55CC968EE1 /* Build configuration list for PBXNativeTarget "TramThienTraTests" */;
+			buildPhases = (
+				D81EB79D06921553F711CB40 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8BE8F1E067C2DEC3A8FBE0B /* PBXTargetDependency */,
+			);
+			name = TramThienTraTests;
+			packageProductDependencies = (
+			);
+			productName = TramThienTraTests;
+			productReference = 63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4FFFF23E4D2E7D815CB50FD /* TramThienTra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 554535EBDCBBC242524337B5 /* Build configuration list for PBXNativeTarget "TramThienTra" */;
+			buildPhases = (
+				274870B3B33A27ACBB805F4E /* Sources */,
+				6B18E464AAF286B24AF980F0 /* Resources */,
+				5B8789175F5861CD81F9EBF3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TramThienTra;
+			packageProductDependencies = (
+				2300CB6A0022D62658BAEB09 /* SnapKit */,
+				0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */,
+			);
+			productName = TramThienTra;
+			productReference = 707EEF0995934D58FD9F1CCC /* TramThienTra.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D5D9D30E243E621ED255D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E4FFFF23E4D2E7D815CB50FD = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7F0CA2FE3F89A3EA13AFC6D7 /* Build configuration list for PBXProject "TramThienTra" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 89754E9C1F33D03538D74E51;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 06272493A9A41CD5968B611E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4FFFF23E4D2E7D815CB50FD /* TramThienTra */,
+				33AD8AF6C32AA153B0509712 /* TramThienTraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B18E464AAF286B24AF980F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D059D168AE3FD3D9223B6E37 /* Assets.xcassets in Resources */,
+				33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		274870B3B33A27ACBB805F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0246B9A74238114ACA04F5B0 /* AppDelegate.swift in Sources */,
+				7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */,
+				CF694433CFAA76E26FCAF407 /* AppleDangNhapView.swift in Sources */,
+				A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */,
+				F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */,
+				5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */,
+				83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */,
+				CCF1D72CC697778C8E76BDB9 /* Constants.swift in Sources */,
+				AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */,
+				2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */,
+				8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */,
+				F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */,
+				A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */,
+				D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */,
+				1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */,
+				B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */,
+				CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */,
+				5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */,
+				5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */,
+				45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */,
+				22782413F9E182E149FA267D /* ThoiGian.swift in Sources */,
+				938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */,
+				38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */,
+				1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */,
+				BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */,
+				B86955EAAF725186FEAE8914 /* TraXongView.swift in Sources */,
+				D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81EB79D06921553F711CB40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8BE8F1E067C2DEC3A8FBE0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4FFFF23E4D2E7D815CB50FD /* TramThienTra */;
+			targetProxy = 5D429BEEF7DFC98520D81699 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		192F09522FFBBF292A84514B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3029299D5FD166553681B70D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TramThienTra/TramThienTra.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWP9AN675X;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TramThienTra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8541148F87AAFA6DB0DE69F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A495DD90D728DD64DA5A62A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TramThienTra/TramThienTra.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWP9AN675X;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TramThienTra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3F3F45B1CDE5AF6125CB57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QWP9AN675X;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TramThienTra.app/TramThienTra";
+			};
+			name = Release;
+		};
+		FAA0924CDD9AA1D8CC0C424F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QWP9AN675X;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TramThienTra.app/TramThienTra";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		554535EBDCBBC242524337B5 /* Build configuration list for PBXNativeTarget "TramThienTra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3029299D5FD166553681B70D /* Debug */,
+				A495DD90D728DD64DA5A62A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7F0CA2FE3F89A3EA13AFC6D7 /* Build configuration list for PBXProject "TramThienTra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				192F09522FFBBF292A84514B /* Debug */,
+				8541148F87AAFA6DB0DE69F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		858AEC4365112B55CC968EE1 /* Build configuration list for PBXNativeTarget "TramThienTraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA0924CDD9AA1D8CC0C424F /* Debug */,
+				E3F3F45B1CDE5AF6125CB57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+		BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		2300CB6A0022D62658BAEB09 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E8D5D9D30E243E621ED255D1 /* Project object */;
+}

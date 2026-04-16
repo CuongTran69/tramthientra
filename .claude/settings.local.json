@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(openspec list:*)",
+      "Read(//Users/cuongtran/vela/**)",
+      "Read(//Users/cuongtran/vela/vela-workspace/**)",
+      "Bash(xcodegen --version)",
+      "Bash(xcrun simctl:*)",
+      "Bash(xcodebuild -version)",
+      "Bash(swift --version)",
+      "mcp__claude-api-web-search-mcp__web-search",
+      "WebFetch(domain:tuist.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:swift.org)",
+      "WebFetch(domain:tuist.dev)",
+      "WebFetch(domain:docs.tuist.dev)",
+      "WebFetch(domain:xcodegen.org)",
+      "WebFetch(domain:cocoapods.org)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(printf 'RIFF$\\\\x00\\\\x00\\\\x00WAVEfmt \\\\x10\\\\x00\\\\x00\\\\x00\\\\x01\\\\x00\\\\x01\\\\x00\\\\x44\\\\xac\\\\x00\\\\x00\\\\x88X\\\\x01\\\\x00\\\\x02\\\\x00\\\\x10\\\\x00data\\\\x00\\\\x00\\\\x00\\\\x00')",
+      "Bash(brew install:*)",
+      "Bash(xcodegen generate:*)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 16' -resolvePackageDependencies)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 16' build)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' build)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' test)",
+      "mcp__auggie__codebase-retrieval",
+      "Bash(gitnexus analyze:*)",
+      "Bash(gitnexus query:*)",
+      "WebSearch",
+      "WebFetch(domain:bighuman.com)",
+      "WebFetch(domain:www.bairesdev.com)",
+      "WebFetch(domain:www.spiritualchime.com)",
+      "WebFetch(domain:trophy.so)",
+      "WebFetch(domain:piktochart.com)",
+      "WebFetch(domain:lyvennithasasikumar.medium.com)",
+      "Bash(openspec new:*)",
+      "Bash(openspec status:*)",
+      "Bash(openspec instructions:*)"
+    ]
+  }
+}
