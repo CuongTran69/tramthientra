@@ -1,12 +1,23 @@
 import SwiftUI
 
-// MARK: - SPEC §2.4 Buông bỏ — text release view (redesigned)
+// MARK: - SPEC §2.4 Buông bỏ — text release view (design-system aligned)
+//
+// Uses ZenTextField + ZenButton for visual & interaction consistency with
+// TichLuyView. Spacing follows the 8 pt grid (8/16/24/32). All interactive
+// elements meet the 44×44 pt minimum touch-target rule and have explicit
+// focus / disabled / loading states.
 
 struct BuongBoView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @StateObject private var viewModel = BuongBoViewModel()
     @State private var smokeIconOpacity: Double = 1.0
     @State private var smokeIconScale: CGFloat = 1.0
+
+    private var canRelease: Bool {
+        !viewModel.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && !viewModel.isReleasing
+    }
 
     var body: some View {
         ZStack {
@@ -14,118 +25,121 @@ struct BuongBoView: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
-                // Header
-                HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.title2)
-                            .foregroundColor(ZenColor.zenBrown)
-                            .frame(minWidth: 44, minHeight: 44)
-                            .contentShape(Rectangle())
-                    }
-                    .accessibilityLabel("Đóng")
-                    .accessibilityHint("Đóng màn hình buông bỏ")
+                header
 
-                    Spacer()
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        // Section helper text — caption tone, matches TichLuyView pattern
+                        Text("Viết ra những gì đang làm bạn trì trệ, rồi buông bỏ. Không ai đọc được.")
+                            .font(ZenFont.caption())
+                            .foregroundColor(ZenColor.zenBrown.opacity(0.7))
+                            .multilineTextAlignment(.leading)
+                            .accessibilityAddTraits(.isStaticText)
 
-                    Text("Buông bỏ")
-                        .font(ZenFont.headline())
-                        .foregroundColor(ZenColor.zenBrownDark)
+                        ZenTextField(
+                            placeholder: "Những gì bạn muốn buông bỏ…",
+                            text: $viewModel.text,
+                            limit: nil,
+                            multiline: true,
+                            minHeight: 200,
+                            maxHeight: 320
+                        )
+                        .opacity(viewModel.isReleasing ? 0 : 1)
+                        .animation(.easeInOut(duration: 0.25), value: viewModel.isReleasing)
+                        .accessibilityLabel("Nhập nội dung muốn buông bỏ")
 
-                    Spacer()
-
-                    Color.clear.frame(width: 44)
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
-
-                Text("Viết ra những gì đang làm bạn trì trệ, rồi buông bỏ. Không ai đọc được.")
-                    .font(ZenFont.caption())
-                    .foregroundColor(ZenColor.zenBrown.opacity(0.7))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-                    .padding(.top, 8)
-
-                // Text area — full-width ZenCard wrapping a TextEditor
-                ZenCard {
-                    ZStack(alignment: .topLeading) {
-                        if viewModel.text.isEmpty {
-                            Text("Những gì bạn muốn buông bỏ...")
-                                .font(ZenFont.body())
-                                .foregroundColor(ZenColor.zenBrown.opacity(0.4))
-                                .padding(.horizontal, 4)
-                                .padding(.vertical, 2)
-                                .allowsHitTesting(false)
+                        // Smoke overlay shown during release animation
+                        if viewModel.isReleasing {
+                            HStack {
+                                Spacer()
+                                KhoiTanView()
+                                    .frame(width: 200, height: 200)
+                                    .transition(.opacity)
+                                    .accessibilityHidden(true)
+                                Spacer()
+                            }
                         }
-
-                        TextEditor(text: $viewModel.text)
-                            .scrollContentBackground(.hidden)
-                            .background(Color.clear)
-                            .font(ZenFont.body())
-                            .foregroundColor(ZenColor.zenBrown)
-                            .frame(minHeight: 160)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 24)
+                    .padding(.bottom, 24)
                 }
-                .padding(.horizontal, 24)
-                .padding(.top, 24)
-                .frame(maxWidth: .infinity)
-                .opacity(viewModel.isReleasing ? 0 : 1)
-                .accessibilityLabel("Nhập nội dung muốn buông bỏ")
+                .scrollDismissesKeyboard(.interactively)
 
-                // Smoke overlay shown during release animation
-                if viewModel.isReleasing {
-                    KhoiTanView()
-                        .frame(width: 200, height: 200)
-                        .transition(.opacity)
-                }
-
-                Spacer()
-
-                // Buông button with 0.6s smoke/dissolve icon animation
-                Button {
-                    guard !viewModel.text.isEmpty && !viewModel.isReleasing else { return }
+                // Release action — uses ZenButton.primary so it inherits haptics,
+                // press-scale animation, reduce-motion handling, and the brand
+                // gradient. Smoke icon overlays the leading edge during dismiss.
+                ZenButton(
+                    "Buông",
+                    variant: .primary,
+                    icon: nil
+                ) {
+                    guard canRelease else { return }
                     playSmokeDismissAnimation()
-                } label: {
-                    HStack(spacing: 8) {
-                        OnboardingSmokeArt()
-                            .frame(width: 24, height: 24)
-                            .opacity(smokeIconOpacity)
-                            .scaleEffect(smokeIconScale)
-                        Text("Buông")
-                            .font(ZenFont.headline())
-                            .foregroundColor(ZenColor.zenBrownDark)
-                    }
-                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 32)
-                .padding(.vertical, 14)
-                .background(Color.white.opacity(0.85))
-                .cornerRadius(25)
-                .padding(.horizontal, 40)
-                .padding(.bottom, 40)
-                .frame(minHeight: 44)
-                .contentShape(Rectangle())
-                .disabled(viewModel.text.isEmpty || viewModel.isReleasing)
+                .overlay(alignment: .leading) {
+                    OnboardingSmokeArt()
+                        .frame(width: 24, height: 24)
+                        .opacity(smokeIconOpacity)
+                        .scaleEffect(smokeIconScale)
+                        .padding(.leading, 40)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
+                .disabled(!canRelease)
+                .opacity(canRelease ? 1.0 : 0.5)
+                .padding(.horizontal, 24)
+                .padding(.bottom, 24)
                 .accessibilityLabel("Buông")
-                .accessibilityHint("Buông bỏ những gì bạn đã viết và xóa chúng đi")
+                .accessibilityHint(
+                    canRelease
+                        ? "Buông bỏ những gì bạn đã viết và xóa chúng đi"
+                        : "Hãy viết điều gì đó trước khi buông"
+                )
             }
         }
+    }
+
+    // MARK: - Header
+
+    private var header: some View {
+        HStack {
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.title3.weight(.medium))
+                    .foregroundColor(ZenColor.zenBrown)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .accessibilityLabel("Đóng")
+            .accessibilityHint("Đóng màn hình buông bỏ")
+
+            Spacer()
+
+            Text("Buông bỏ")
+                .font(ZenFont.headline())
+                .foregroundColor(ZenColor.zenBrownDark)
+                .accessibilityAddTraits(.isHeader)
+
+            Spacer()
+
+            Color.clear.frame(width: 44, height: 44)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
     }
 
     // MARK: - Smoke icon 0.6s dissolve animation before dismissal
 
     private func playSmokeDismissAnimation() {
-        // 0.6s smoke/dissolve: scale up and fade out the icon
-        withAnimation(.easeInOut(duration: 0.3)) {
+        let duration: Double = reduceMotion ? 0.0 : 0.3
+        withAnimation(.easeInOut(duration: duration)) {
             smokeIconOpacity = 0
-            smokeIconScale = 1.4
+            smokeIconScale = reduceMotion ? 1.0 : 1.4
         }
-        // After 0.6s total, trigger the viewmodel release
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            // Reset icon state
+        DispatchQueue.main.asyncAfter(deadline: .now() + (reduceMotion ? 0.1 : 0.6)) {
             smokeIconOpacity = 1.0
             smokeIconScale = 1.0
             Task {

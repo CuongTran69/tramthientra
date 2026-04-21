@@ -95,8 +95,8 @@ You are an implementation subagent. Your job is to implement tasks from an OpenS
    ```
 
    - `--repo xxx` is MANDATORY for both commands. If you do not yet know the repo value, run `npx gitnexus list` first to identify the current repo, then use that value. Do NOT run either command without `--repo`.
-   - `context` shows callers, callees, and execution flows the symbol participates in. Read the output — it tells you what else you need to update. If the symbol name is ambiguous (multiple matches), add `--file <path>` to disambiguate.
-   - `impact` shows upstream dependents (what breaks if you change it). Check the risk level.
+   - `context` shows callers, callees, and execution flows the symbol participates in. Read the output — it tells you what else you need to update. If the symbol name is ambiguous (multiple matches), add `--file <path>` to disambiguate. `--file` ONLY works with `context` — do NOT use it with `impact`.
+   - `impact` shows upstream dependents (what breaks if you change it). Check the risk level. Do NOT pass `--file` to `impact` — it does not support this flag and will fail.
    - If risk is HIGH or CRITICAL: you MUST update all d=1 (direct callers/importers) dependents as part of the task. Warn the user if blast radius is larger than expected.
    - For renames: NEVER find-replace across files. Run `npx gitnexus context --repo xxx "oldName"` to find all references first, then update each call site with full understanding of its context.
 

@@ -9,6 +9,7 @@ struct HistoryView: View {
     @Query(sort: \GratitudeLog.date, order: .reverse) private var logs: [GratitudeLog]
     @State private var page = 0
     @State private var rowsAppeared = false
+    @State private var pendingDelete: GratitudeLog?
     private let pageSize = Constants.historyPageSize
 
     private var paginatedLogs: [GratitudeLog] {
@@ -47,9 +48,9 @@ struct HistoryView: View {
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
-                            .font(.title2)
+                            .font(.title3.weight(.medium))
                             .foregroundColor(ZenColor.zenBrown)
-                            .frame(minWidth: 44, minHeight: 44)
+                            .frame(width: 44, height: 44)
                             .contentShape(Rectangle())
                     }
                     .accessibilityLabel("Đóng")
@@ -64,10 +65,10 @@ struct HistoryView: View {
 
                     Spacer()
 
-                    Color.clear.frame(width: 44)
+                    Color.clear.frame(width: 44, height: 44)
                 }
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
                 .padding(.bottom, 8)
 
                 if logs.isEmpty {
@@ -94,6 +95,31 @@ struct HistoryView: View {
                                             appeared: rowsAppeared
                                         )
                                     )
+                                    // Long-press preview + quick actions
+                                    .contextMenu {
+                                        NavigationLink(destination: HistoryDetailView(log: log)) {
+                                            Label("Xem chi tiết", systemImage: "doc.text.magnifyingglass")
+                                        }
+                                        Button(role: .destructive) {
+                                            HapticService.shared.playLight()
+                                            pendingDelete = log
+                                        } label: {
+                                            Label("Xoá", systemImage: "trash")
+                                        }
+                                    } preview: {
+                                        HistoryRowPreview(log: log, dateFormatter: sectionDateFormatter)
+                                    }
+                                    // SPEC §2.7: swipe left → delete with confirmation
+                                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                        Button(role: .destructive) {
+                                            HapticService.shared.playLight()
+                                            pendingDelete = log
+                                        } label: {
+                                            Label("Xoá", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        .accessibilityLabel("Xoá nhật ký ngày \(sectionDateFormatter.string(from: log.date))")
+                                    }
                                 }
                             } header: {
                                 // Sticky date header
@@ -129,33 +155,76 @@ struct HistoryView: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }
+        .confirmationDialog(
+            "Xoá kỷ niệm này?",
+            isPresented: Binding(
+                get: { pendingDelete != nil },
+                set: { if !$0 { pendingDelete = nil } }
+            ),
+            titleVisibility: .visible,
+            presenting: pendingDelete
+        ) { log in
+            Button("Xoá", role: .destructive) {
+                HapticService.shared.playWarning()
+                modelContext.delete(log)
+                try? modelContext.save()
+                pendingDelete = nil
+            }
+            Button("Huỷ", role: .cancel) {
+                pendingDelete = nil
+            }
+        } message: { _ in
+            Text("Hành động này không thể hoàn tác.")
         }
     }
 
     // MARK: - Empty state
 
     private var emptyStateView: some View {
-        VStack(spacing: 20) {
-            // Empty teacup illustration using SF Symbol + decorative frame
+        VStack(spacing: 24) {
+            // Teacup illustration — layered soft sage halo + symbol
             ZStack {
                 Circle()
-                    .fill(ZenColor.zenSage.opacity(0.1))
-                    .frame(width: 100, height: 100)
+                    .fill(
+                        RadialGradient(
+                            colors: [
+                                ZenColor.zenSage.opacity(0.22),
+                                ZenColor.zenSage.opacity(0.02)
+                            ],
+                            center: .center,
+                            startRadius: 2,
+                            endRadius: 70
+                        )
+                    )
+                    .frame(width: 140, height: 140)
+
+                Circle()
+                    .fill(Color.white.opacity(0.5))
+                    .frame(width: 92, height: 92)
+                    .overlay(
+                        Circle()
+                            .stroke(ZenColor.zenSage.opacity(0.25), lineWidth: 1)
+                    )
+
                 Image(systemName: "cup.and.saucer")
-                    .font(.system(size: 48))
-                    .foregroundColor(ZenColor.zenSage.opacity(0.5))
+                    .font(.system(size: 40, weight: .light))
+                    .foregroundColor(ZenColor.zenSage.opacity(0.75))
             }
             .accessibilityHidden(true)
 
-            Text("Chưa có kỷ niệm nào được ghi lại.")
-                .font(ZenFont.body())
-                .foregroundColor(ZenColor.zenBrown.opacity(0.6))
-                .multilineTextAlignment(.center)
+            VStack(spacing: 8) {
+                Text("Chưa có kỷ niệm nào được ghi lại")
+                    .font(ZenFont.subheadline())
+                    .foregroundColor(ZenColor.zenBrownDark)
+                    .multilineTextAlignment(.center)
 
-            Text("Hãy bắt đầu tích luỹ những điều biết ơn.")
-                .font(ZenFont.caption())
-                .foregroundColor(ZenColor.zenBrown.opacity(0.4))
-                .multilineTextAlignment(.center)
+                Text("Hãy bắt đầu tích luỹ những điều biết ơn.")
+                    .font(ZenFont.caption())
+                    .foregroundColor(ZenColor.zenBrown.opacity(0.55))
+                    .multilineTextAlignment(.center)
+            }
         }
         .padding(.horizontal, 40)
     }
@@ -203,5 +272,71 @@ struct StaggerAppearModifier: ViewModifier {
                     .delay(Double(index) * 0.05),
                 value: appeared
             )
+    }
+}
+
+// MARK: - Long-press preview card
+// Shown when the user long-presses a HistoryRow. Renders the full set of
+// gratitude items so the user can scan the day without navigating.
+
+struct HistoryRowPreview: View {
+    let log: GratitudeLog
+    let dateFormatter: DateFormatter
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Nhật ký biết ơn")
+                    .font(ZenFont.caption2())
+                    .tracking(1.5)
+                    .textCase(.uppercase)
+                    .foregroundColor(ZenColor.zenBrown.opacity(0.55))
+                Text(dateFormatter.string(from: log.date))
+                    .font(ZenFont.headline())
+                    .foregroundColor(ZenColor.zenBrownDark)
+            }
+
+            Rectangle()
+                .fill(ZenColor.zenSage.opacity(0.35))
+                .frame(width: 32, height: 1)
+
+            if log.items.isEmpty {
+                Text("Không có nội dung được ghi lại.")
+                    .font(ZenFont.caption())
+                    .foregroundColor(ZenColor.zenBrown.opacity(0.6))
+            } else {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(Array(log.items.enumerated()), id: \.offset) { index, item in
+                        HStack(alignment: .top, spacing: 10) {
+                            Text("\(index + 1)")
+                                .font(ZenFont.caption2())
+                                .foregroundColor(ZenColor.zenBrownDark)
+                                .frame(width: 20, height: 20)
+                                .background(
+                                    Circle().fill(ZenColor.zenSage.opacity(0.22))
+                                )
+                                .overlay(
+                                    Circle().stroke(ZenColor.zenSage.opacity(0.45), lineWidth: 1)
+                                )
+
+                            Text(item)
+                                .font(ZenFont.caption())
+                                .foregroundColor(ZenColor.zenBrown)
+                                .lineLimit(3)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                }
+            }
+        }
+        .padding(20)
+        .frame(width: 300, alignment: .leading)
+        .background(
+            ZStack {
+                RoundedRectangle(cornerRadius: 20).fill(ZenColor.zenCream)
+                RoundedRectangle(cornerRadius: 20).fill(Color.white.opacity(0.55))
+            }
+        )
     }
 }

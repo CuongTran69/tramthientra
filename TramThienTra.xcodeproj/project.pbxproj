@@ -11,7 +11,9 @@
 		1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C2CA4CD5125D42B9AF046 /* NotificationService.swift */; };
 		1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */; };
 		22782413F9E182E149FA267D /* ThoiGian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */; };
+		2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */; };
 		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
+		2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBAE530579BB6E5AB26C81 /* ZenButton.swift */; };
 		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
 		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
 		428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */; };
@@ -21,6 +23,7 @@
 		5533AE86AFC667A4B82DDB8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2300CB6A0022D62658BAEB09 /* SnapKit */; };
 		5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58B7359C89E0249337DD5F /* SettingsView.swift */; };
 		5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE023640EA5125DD8F119E30 /* StreakViewModel.swift */; };
+		78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22A0D104486E778E63D627 /* LoginPromptView.swift */; };
 		7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FEA37D704438F92E2B94A /* AppUser.swift */; };
 		83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* CayThienView.swift */; };
 		8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */; };
@@ -38,6 +41,7 @@
 		D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CE06981925B6E2448C76B /* NenDongView.swift */; };
 		D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */; };
 		F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0475BFB114C60C9BB1994A /* HistoryView.swift */; };
+		F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574D3646B525654F2976C31 /* ZenTextField.swift */; };
 		F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188AA5D389C237F588BFAE9 /* BuongBoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,7 @@
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
 		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
+		3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenCard.swift; sourceTree = "<group>"; };
 		4123799F7D2A4641BD12A789 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGian.swift; sourceTree = "<group>"; };
 		4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7ADFD90BFDC40BD010689 /* CayThienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayThienView.swift; sourceTree = "<group>"; };
 		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7574D3646B525654F2976C31 /* ZenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenTextField.swift; sourceTree = "<group>"; };
+		7F22A0D104486E778E63D627 /* LoginPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptView.swift; sourceTree = "<group>"; };
+		88CBAE530579BB6E5AB26C81 /* ZenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenButton.swift; sourceTree = "<group>"; };
 		8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutGiotNuocView.swift; sourceTree = "<group>"; };
 		9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A188AA5D389C237F588BFAE9 /* BuongBoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoView.swift; sourceTree = "<group>"; };
@@ -153,7 +161,11 @@
 			children = (
 				35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */,
 				66B7ADFD90BFDC40BD010689 /* CayThienView.swift */,
+				7F22A0D104486E778E63D627 /* LoginPromptView.swift */,
 				D31CE06981925B6E2448C76B /* NenDongView.swift */,
+				88CBAE530579BB6E5AB26C81 /* ZenButton.swift */,
+				3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */,
+				7574D3646B525654F2976C31 /* ZenTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -387,6 +399,7 @@
 				8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */,
 				F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */,
 				A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */,
+				78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */,
 				D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */,
 				1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */,
 				B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */,
@@ -401,6 +414,9 @@
 				BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */,
 				B86955EAAF725186FEAE8914 /* TraXongView.swift in Sources */,
 				D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */,
+				2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */,
+				2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */,
+				F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

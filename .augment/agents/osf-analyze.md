@@ -48,7 +48,7 @@ GitNexus CLI commands (run via `npx gitnexus`):
 | `impact` | Blast radius with depth grouping and confidence scoring |
 | `cypher` | Raw Cypher graph queries for complex structural questions |
 
-All commands require `--repo <name>`. Run `npx gitnexus list` first if you don't know the repo name. Use `--file <path>` with `context` when the symbol name is ambiguous.
+All commands require `--repo <name>`. Run `npx gitnexus list` first if you don't know the repo name. Use `--file <path>` with `context` when the symbol name is ambiguous. `--file` ONLY works with `context`. Do NOT use `--file` with `impact`, `query`, or `cypher` — they will fail with exit code 1.
 
 Use for: tracing exact dependencies, understanding call chains, measuring blast radius, verifying what codebase-retrieval found.
 

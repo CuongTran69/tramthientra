@@ -8,6 +8,7 @@ struct TichLuyView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = TichLuyViewModel()
     @State private var showLoginPrompt = false
+    @State private var isSignedIn: Bool = AuthService.shared.getCurrentUserId() != nil
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -20,16 +21,16 @@ struct TichLuyView: View {
             NenDongView()
                 .ignoresSafeArea()
 
-            VStack(spacing: 24) {
+            VStack(spacing: 0) {
                 // Header
                 HStack {
                     Button {
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
-                            .font(.title2)
+                            .font(.title3.weight(.medium))
                             .foregroundColor(ZenColor.zenBrown)
-                            .frame(minWidth: 44, minHeight: 44)
+                            .frame(width: 44, height: 44)
                             .contentShape(Rectangle())
                     }
                     .accessibilityLabel("Đóng")
@@ -43,73 +44,83 @@ struct TichLuyView: View {
 
                     Spacer()
 
-                    Color.clear.frame(width: 44)
+                    Color.clear.frame(width: 44, height: 44)
                 }
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
 
-                // Section header with decoration line
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Ba điều biết ơn hôm nay")
-                        .font(ZenFont.subheadline())
-                        .foregroundColor(ZenColor.zenBrown)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        // Section label + decoration
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Ba điều biết ơn hôm nay")
+                                .font(ZenFont.subheadline())
+                                .foregroundColor(ZenColor.zenBrown)
+                                .accessibilityAddTraits(.isHeader)
 
-                    // 1 pt decoration line below section header
-                    Rectangle()
-                        .fill(ZenColor.zenSage.opacity(0.4))
-                        .frame(height: 1)
+                            Rectangle()
+                                .fill(ZenColor.zenSage.opacity(0.4))
+                                .frame(width: 48, height: 1)
+                        }
+                        .padding(.top, 24)
+
+                        VStack(spacing: 12) {
+                            ZenTextField(
+                                placeholder: "Điều tạ ơn thứ nhất…",
+                                text: $viewModel.item1,
+                                limit: Constants.maxCharacterLimit,
+                                multiline: true
+                            )
+                            .accessibilityLabel("Điều tạ ơn thứ nhất")
+
+                            ZenTextField(
+                                placeholder: "Điều tạ ơn thứ hai…",
+                                text: $viewModel.item2,
+                                limit: Constants.maxCharacterLimit,
+                                multiline: true
+                            )
+                            .accessibilityLabel("Điều tạ ơn thứ hai")
+
+                            ZenTextField(
+                                placeholder: "Điều tạ ơn thứ ba…",
+                                text: $viewModel.item3,
+                                limit: Constants.maxCharacterLimit,
+                                multiline: true
+                            )
+                            .accessibilityLabel("Điều tạ ơn thứ ba")
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 24)
                 }
-                .padding(.horizontal, 24)
+                .scrollDismissesKeyboard(.interactively)
 
-                VStack(spacing: 16) {
-                    ZenTextField(
-                        placeholder: "Điều tạ ơn thứ nhất...",
-                        text: $viewModel.item1,
-                        limit: Constants.maxCharacterLimit,
-                        multiline: true
-                    )
-                    .accessibilityLabel("Điều tạ ơn thứ nhất")
-
-                    ZenTextField(
-                        placeholder: "Điều tạ ơn thứ hai...",
-                        text: $viewModel.item2,
-                        limit: Constants.maxCharacterLimit,
-                        multiline: true
-                    )
-                    .accessibilityLabel("Điều tạ ơn thứ hai")
-
-                    ZenTextField(
-                        placeholder: "Điều tạ ơn thứ ba...",
-                        text: $viewModel.item3,
-                        limit: Constants.maxCharacterLimit,
-                        multiline: true
-                    )
-                    .accessibilityLabel("Điều tạ ơn thứ ba")
-                }
-                .padding(.horizontal, 24)
-
-                Spacer()
-
-                // Save button — water drop animated button
+                // Save button — water drop animated button, docked at bottom
                 NutGiotNuocView(isEnabled: viewModel.isFormValid && !viewModel.isSaving) {
-                    Task {
-                        await viewModel.saveGratitude(modelContext: modelContext)
-                        dismiss()
+                    if isSignedIn {
+                        performSave()
+                    } else {
+                        showLoginPrompt = true
                     }
                 }
                 .disabled(!viewModel.isFormValid || viewModel.isSaving)
-                .padding(.bottom, 40)
-                .accessibilityLabel("Lưu")
-                .accessibilityHint("Lưu ba điều biết ơn hôm nay")
+                .padding(.top, 8)
+                .padding(.bottom, 24)
             }
         }
-        .alert("Đăng nhập", isPresented: $showLoginPrompt) {
-            Button("Đăng nhập", role: .cancel) {
-                // TODO: Navigate to Sign in with Apple
+        .sheet(isPresented: $showLoginPrompt) {
+            LoginPromptView(isSignedIn: $isSignedIn) { _ in
+                // After the prompt resolves (sign-in or "Để sau"), save anyway —
+                // SPEC §2.4: guest saves are allowed; sync runs once signed in.
+                performSave()
             }
-            Button("Huỷ", role: .destructive) {}
-        } message: {
-            Text("Bạn cần đăng nhập để lưu dữ liệu tạ ơn.")
+        }
+    }
+
+    private func performSave() {
+        Task {
+            await viewModel.saveGratitude(modelContext: modelContext)
+            dismiss()
         }
     }
 }

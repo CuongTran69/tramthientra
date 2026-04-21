@@ -16,36 +16,28 @@ struct TraThatView: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
-                // Top navigation bar
+                // Top navigation bar — pill-style glass icon buttons
                 HStack {
-                    Button {
+                    navIconButton(
+                        systemName: "gearshape.fill",
+                        accessibilityLabel: "Cài đặt",
+                        accessibilityHint: "Mở màn hình cài đặt ứng dụng"
+                    ) {
                         showSettings = true
-                    } label: {
-                        Image(systemName: "gearshape.fill")
-                            .font(.title2)
-                            .foregroundColor(ZenColor.zenBrown)
-                            .frame(minWidth: 44, minHeight: 44)
-                            .contentShape(Rectangle())
                     }
-                    .accessibilityLabel("Cài đặt")
-                    .accessibilityHint("Mở màn hình cài đặt ứng dụng")
 
                     Spacer()
 
-                    Button {
+                    navIconButton(
+                        systemName: "clock.arrow.circlepath",
+                        accessibilityLabel: "Lịch sử",
+                        accessibilityHint: "Xem lịch sử các lần tích luỹ"
+                    ) {
                         showHistory = true
-                    } label: {
-                        Image(systemName: "clock.arrow.circlepath")
-                            .font(.title2)
-                            .foregroundColor(ZenColor.zenBrown)
-                            .frame(minWidth: 44, minHeight: 44)
-                            .contentShape(Rectangle())
                     }
-                    .accessibilityLabel("Lịch sử")
-                    .accessibilityHint("Xem lịch sử các lần tích luỹ")
                 }
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
+                .padding(.horizontal, 20)
+                .padding(.top, 8)
 
                 Spacer()
 
@@ -85,15 +77,15 @@ struct TraThatView: View {
                     .accessibilityLabel("Buông bỏ")
                     .accessibilityHint("Mở màn hình viết ra và buông bỏ những lo âu")
                 }
-                .padding(.horizontal, 32)
-                .padding(.bottom, 16)
+                .padding(.horizontal, 24)
+                .padding(.bottom, 20)
 
                 // Streak bar wrapped in ZenCard
                 ZenCard {
                     CayThienView(streak: streakViewModel.streak, stage: streakViewModel.stage)
                 }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 40)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 32)
             }
         }
         .sheet(isPresented: $showSettings) {
@@ -112,5 +104,34 @@ struct TraThatView: View {
         .fullScreenCover(isPresented: $showBuongBo) {
             BuongBoView()
         }
+    }
+
+    // MARK: - Pill-style glass icon button for top nav
+
+    @ViewBuilder
+    private func navIconButton(
+        systemName: String,
+        accessibilityLabel: String,
+        accessibilityHint: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: 18, weight: .medium))
+                .foregroundColor(ZenColor.zenBrown)
+                .frame(width: 44, height: 44)
+                .background(
+                    ZStack {
+                        Circle().fill(.ultraThinMaterial)
+                        Circle().fill(Color.white.opacity(0.45))
+                        Circle().stroke(Color.white.opacity(0.6), lineWidth: 1)
+                    }
+                )
+                .shadow(color: ZenColor.zenBrown.opacity(0.08), radius: 8, x: 0, y: 3)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityHint(accessibilityHint)
     }
 }

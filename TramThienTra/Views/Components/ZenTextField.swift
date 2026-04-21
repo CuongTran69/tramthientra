@@ -15,21 +15,25 @@ struct ZenTextField: View {
     @Binding var text: String
     var limit: Int? = nil
     var multiline: Bool = false
+    /// Minimum height of the multiline text area. Default 64 pt.
+    var minHeight: CGFloat = 64
+    /// Maximum height of the multiline text area. Default 120 pt.
+    var maxHeight: CGFloat = 120
 
     @FocusState private var isFocused: Bool
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Background card layers
+            // Background card layers — match ZenCard for consistency
             RoundedRectangle(cornerRadius: 20)
                 .fill(.ultraThinMaterial)
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white.opacity(0.1))
-            // Focus ring: animates in/out on focus state change
+                .fill(Color.white.opacity(0.55))
+            // Focus ring: 2 pt sage on focus, soft hairline otherwise
             RoundedRectangle(cornerRadius: 20)
                 .stroke(
-                    isFocused ? ZenColor.zenSage : Color.white.opacity(0.2),
-                    lineWidth: 1
+                    isFocused ? ZenColor.zenSage : Color.white.opacity(0.6),
+                    lineWidth: isFocused ? 2 : 1
                 )
                 .animation(.easeInOut(duration: 0.2), value: isFocused)
 
@@ -40,9 +44,9 @@ struct ZenTextField: View {
                         if text.isEmpty {
                             Text(placeholder)
                                 .font(ZenFont.body())
-                                .foregroundColor(ZenColor.zenBrown.opacity(0.4))
+                                .foregroundColor(ZenColor.zenBrown.opacity(0.45))
                                 .padding(.horizontal, 20)
-                                .padding(.top, 18)
+                                .padding(.top, 16)
                                 .allowsHitTesting(false)
                         }
                         TextEditor(text: $text)
@@ -51,8 +55,8 @@ struct ZenTextField: View {
                             .font(ZenFont.body())
                             .foregroundColor(ZenColor.zenBrown)
                             .padding(.horizontal, 16)
-                            .padding(.top, 14)
-                            .frame(minHeight: 100)
+                            .padding(.top, 12)
+                            .frame(minHeight: minHeight, maxHeight: maxHeight)
                             .focused($isFocused)
                             .onChange(of: text) { _, newValue in
                                 if let limit = limit, newValue.count > limit {
@@ -76,24 +80,28 @@ struct ZenTextField: View {
                         }
                 }
 
-                // Inline character counter — bottom-right inside the field
+                // Inline character counter — bottom-right, fades in only when focused or populated
                 if let limit = limit {
                     HStack {
                         Spacer()
                         Text("\(text.count) / \(limit)")
                             .font(ZenFont.caption2())
+                            .monospacedDigit()
                             .foregroundColor(
                                 text.count >= limit
                                     ? ZenColor.zenGold
-                                    : ZenColor.zenBrown.opacity(0.4)
+                                    : ZenColor.zenBrown.opacity(0.45)
                             )
-                            .padding(.horizontal, 20)
-                            .padding(.bottom, 12)
+                            .padding(.horizontal, 18)
+                            .padding(.bottom, 10)
+                            .opacity(isFocused || !text.isEmpty ? 1 : 0)
+                            .animation(.easeInOut(duration: 0.2), value: isFocused)
                     }
                 }
             }
         }
-        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+        .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
+        .shadow(color: ZenColor.zenBrown.opacity(0.06), radius: 14, x: 0, y: 6)
         // Minimum 44 pt height for accessibility touch target compliance
         .frame(minHeight: 44)
     }

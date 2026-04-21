@@ -27,23 +27,55 @@ struct OnboardingView: View {
 
     var body: some View {
         ZStack {
-            // Warm paper background
-            ZenColor.zenCream
-                .ignoresSafeArea()
+            // Warm paper background: reuse the shared suongSom three-stop gradient
+            // from ThoiGian so onboarding shares the morning palette (Task 12.1:
+            // no inline Color(hex:) outside Constants / ThoiGian token sources).
+            LinearGradient(
+                colors: ThoiGian.suongSom.colors,
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            // Decorative soft sage halo behind illustrations
+            Circle()
+                .fill(
+                    RadialGradient(
+                        colors: [
+                            ZenColor.zenSage.opacity(0.16),
+                            ZenColor.zenSage.opacity(0)
+                        ],
+                        center: .center,
+                        startRadius: 4,
+                        endRadius: 260
+                    )
+                )
+                .frame(width: 520, height: 520)
+                .offset(y: -120)
+                .accessibilityHidden(true)
 
             VStack(spacing: 0) {
                 // Skip button row
                 HStack {
                     Spacer()
-                    Button("Bỏ qua") {
-                        withAnimation {
-                            completeOnboarding()
-                        }
+                    Button {
+                        withAnimation { completeOnboarding() }
+                    } label: {
+                        Text("Bỏ qua")
+                            .font(ZenFont.body())
+                            .foregroundColor(ZenColor.zenBrown.opacity(0.65))
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(
+                                Capsule().fill(Color.white.opacity(0.5))
+                            )
+                            .overlay(
+                                Capsule().stroke(ZenColor.zenBrown.opacity(0.12), lineWidth: 1)
+                            )
                     }
-                    .font(ZenFont.body())
-                    .foregroundColor(ZenColor.zenBrown.opacity(0.6))
-                    .padding(.trailing, 24)
-                    .padding(.top, 16)
+                    .buttonStyle(.plain)
+                    .padding(.trailing, 20)
+                    .padding(.top, 12)
                     .frame(minHeight: 44)
                     .contentShape(Rectangle())
                     .accessibilityLabel("Bỏ qua phần giới thiệu")
@@ -62,39 +94,34 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                // Use transition(crossfade) when reduce motion is on
                 .animation(
                     reduceMotion ? .easeInOut(duration: 0.3) : nil,
                     value: currentPage
                 )
 
-                // Progress bar (thin horizontal fill) replaces dot indicators
+                // Progress bar
                 onboardingProgressBar
                     .padding(.horizontal, 40)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 24)
                     .accessibilityLabel("Trang \(currentPage + 1) trong \(pages.count)")
-                    .accessibilityHidden(true) // decorative, tab reads page content
+                    .accessibilityHidden(true)
 
                 // Action: "Bắt đầu" on last page, else "Tiếp theo"
                 VStack(spacing: 0) {
                     if currentPage == pages.count - 1 {
                         ZenButton("Bắt đầu", variant: .primary) {
-                            withAnimation {
-                                completeOnboarding()
-                            }
+                            withAnimation { completeOnboarding() }
                         }
                         .padding(.horizontal, 40)
-                        .padding(.bottom, 48)
+                        .padding(.bottom, 40)
                         .accessibilityLabel("Bắt đầu")
                         .accessibilityHint("Hoàn tất giới thiệu và bắt đầu sử dụng ứng dụng")
                     } else {
                         ZenButton("Tiếp theo", variant: .primary) {
-                            withAnimation {
-                                currentPage += 1
-                            }
+                            withAnimation { currentPage += 1 }
                         }
                         .padding(.horizontal, 40)
-                        .padding(.bottom, 48)
+                        .padding(.bottom, 40)
                         .accessibilityLabel("Tiếp theo")
                         .accessibilityHint("Chuyển sang trang giới thiệu tiếp theo")
                     }
@@ -109,20 +136,26 @@ struct OnboardingView: View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
                 // Track
-                RoundedRectangle(cornerRadius: 2)
-                    .fill(ZenColor.zenBrown.opacity(0.15))
-                    .frame(height: 3)
-                // Fill
-                RoundedRectangle(cornerRadius: 2)
-                    .fill(ZenColor.zenBrown)
-                    .frame(
-                        width: geo.size.width * CGFloat(currentPage + 1) / CGFloat(pages.count),
-                        height: 3
+                Capsule()
+                    .fill(ZenColor.zenBrown.opacity(0.12))
+                    .frame(height: 4)
+                // Fill — sage gradient for subtle warmth
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [ZenColor.zenSage, ZenColor.zenSageLight],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
                     )
-                    .animation(.easeInOut(duration: 0.3), value: currentPage)
+                    .frame(
+                        width: max(4, geo.size.width * CGFloat(currentPage + 1) / CGFloat(pages.count)),
+                        height: 4
+                    )
+                    .animation(.easeInOut(duration: 0.35), value: currentPage)
             }
         }
-        .frame(height: 3)
+        .frame(height: 4)
     }
 
     private func completeOnboarding() {

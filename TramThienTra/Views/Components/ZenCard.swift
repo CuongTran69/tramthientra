@@ -27,15 +27,28 @@ struct ZenCard<Content: View>: View {
                     // Base: system material for blur
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.ultraThinMaterial)
-                    // Secondary overlay: keeps card visible against dark gradients
+                    // Secondary overlay: crisper white wash so card reads cleanly
+                    // on both light morning gradients and dark night gradients.
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(0.1))
-                    // Frosted border
+                        .fill(Color.white.opacity(0.55))
+                    // Subtle inner highlight along the top edge
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.9),
+                                    Color.white.opacity(0.25)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ),
+                            lineWidth: 1
+                        )
                 }
             }
-            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+            // Layered shadow: close tight shadow + soft wider ambient
+            .shadow(color: Color.black.opacity(0.06), radius: 2, x: 0, y: 1)
+            .shadow(color: ZenColor.zenBrown.opacity(0.08), radius: 18, x: 0, y: 8)
     }
 }
 

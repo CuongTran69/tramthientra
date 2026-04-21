@@ -66,18 +66,10 @@ enum ZenColor {
     static let zenGold = Color(hex: "#D4A574")
     /// Warm cream — light background base (#F5EDE4)
     static let zenCream = Color(hex: "#F5EDE4")
-
-    // MARK: - Deprecated alias (migrating from zenAccent)
-    /// Deprecated: use zenSage instead. Will be removed after all callers migrate.
-    @available(*, deprecated, renamed: "zenSage")
-    static let zenAccent = zenSage
 }
 
-// MARK: - Legacy Color extensions (kept for backward compatibility during migration)
+// MARK: - Text / background color helpers (adaptive to light & dark mode)
 extension Color {
-    /// Deprecated: use ZenColor.zenSage. Will be removed after migration.
-    static let zenAccent = ZenColor.zenSage
-
     static let zenPrimaryText = Color(UIColor { traitCollection in
         return traitCollection.userInterfaceStyle == .dark ? UIColor(hex: "#F5F5F5") : UIColor(hex: "#2C2C2C")
     })
