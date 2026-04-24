@@ -14,14 +14,6 @@ settings:
     INFOPLIST_KEY_UILaunchScreen_Generation: YES
     INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
 
-packages:
-  SnapKit:
-    url: https://github.com/SnapKit/SnapKit.git
-    from: "5.7.0"
-  Kingfisher:
-    url: https://github.com/onevcat/Kingfisher.git
-    from: "7.10.0"
-
 targets:
   TramThienTra:
     type: application
@@ -39,9 +31,6 @@ targets:
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
         ENABLE_PREVIEWS: YES
-    dependencies:
-      - package: SnapKit
-      - package: Kingfisher
     info:
       path: TramThienTra/Info.plist
       properties:

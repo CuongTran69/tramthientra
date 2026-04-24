@@ -33,7 +33,10 @@ struct SettingsView: View {
                     .frame(minHeight: 44)
                     .onChange(of: dailyReminder) { _, newValue in
                         if newValue {
-                            NotificationService.shared.scheduleDailyReminder()
+                            Task {
+                                await NotificationService.shared.requestAuthorization()
+                                NotificationService.shared.scheduleDailyReminder()
+                            }
                         } else {
                             NotificationService.shared.cancelAllPendingNotifications()
                         }
@@ -183,4 +186,11 @@ struct SettingsView: View {
             .tracking(1.5)
             .foregroundColor(ZenColor.zenBrown.opacity(0.6))
     }
+}
+
+#Preview {
+    NavigationStack {
+        SettingsView()
+    }
+    .environmentObject(ThoiGianViewModel())
 }

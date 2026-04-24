@@ -4,15 +4,16 @@ import SwiftUI
 //
 // Wraps content in an .ultraThinMaterial background with:
 // - 20 pt padding
-// - Color.white.opacity(0.1) secondary background layer (ensures legibility over dark gradients)
+// - Color.white at cardOverlayOpacity (time-slot driven) secondary background layer
 // - 20 pt corner radius
-// - 1 pt RoundedRectangle white stroke (Color.white.opacity(0.2))
+// - 1 pt RoundedRectangle white stroke with gradient
 // - Drop shadow: Color.black.opacity(0.1), radius 10, offset (0, 5)
 //
-// Use over any time-slot gradient background. The white overlay ensures the card
-// is always legible regardless of system material rendering or iOS version.
+// Use over any time-slot gradient background. The white overlay opacity changes per
+// slot via ThoiGianViewModel environment object and animates with 2s easeInOut.
 
 struct ZenCard<Content: View>: View {
+    @EnvironmentObject var thoiGianVM: ThoiGianViewModel
     let content: Content
 
     init(@ViewBuilder content: () -> Content) {
@@ -27,10 +28,10 @@ struct ZenCard<Content: View>: View {
                     // Base: system material for blur
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.ultraThinMaterial)
-                    // Secondary overlay: crisper white wash so card reads cleanly
-                    // on both light morning gradients and dark night gradients.
+                    // Secondary overlay: white wash with slot-driven opacity
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(0.55))
+                        .fill(Color.white.opacity(thoiGianVM.current.cardOverlayOpacity))
+                        .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                     // Subtle inner highlight along the top edge
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(
@@ -83,4 +84,5 @@ struct ZenCard<Content: View>: View {
         }
         .padding(.horizontal, 24)
     }
+    .environmentObject(ThoiGianViewModel())
 }

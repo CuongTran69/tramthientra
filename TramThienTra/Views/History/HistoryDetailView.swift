@@ -120,3 +120,23 @@ struct HistoryDetailView: View {
         }
     }
 }
+
+#Preview {
+    let container = try! ModelContainer(
+        for: GratitudeLog.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+    let sampleLog = GratitudeLog(
+        date: Date(),
+        items: [
+            "Được uống trà sáng nay",
+            "Trời đẹp và mát mẻ",
+            "Gia đình mạnh khoẻ"
+        ]
+    )
+    return NavigationStack {
+        HistoryDetailView(log: sampleLog)
+    }
+    .modelContainer(container)
+    .environmentObject(ThoiGianViewModel())
+}

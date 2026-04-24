@@ -5,10 +5,12 @@ import SwiftUI
 struct TraThatView: View {
     @StateObject private var viewModel = TraThatViewModel()
     @EnvironmentObject var streakViewModel: StreakViewModel
+    @EnvironmentObject var thoiGianVM: ThoiGianViewModel
     @State private var showSettings = false
     @State private var showHistory = false
     @State private var showTichLuy = false
     @State private var showBuongBo = false
+    @State private var showThienTho = false
 
     var body: some View {
         ZStack {
@@ -31,7 +33,7 @@ struct TraThatView: View {
                     navIconButton(
                         systemName: "clock.arrow.circlepath",
                         accessibilityLabel: "Lịch sử",
-                        accessibilityHint: "Xem lịch sử các lần tích luỹ"
+                        accessibilityHint: "Xem lịch sử các lần ghi biết ơn"
                     ) {
                         showHistory = true
                     }
@@ -39,19 +41,27 @@ struct TraThatView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
 
-                Spacer()
-
-                // App title
-                Text("Trạm Thiền Trà")
-                    .font(ZenFont.display())
-                    .foregroundColor(ZenColor.zenBrownDark)
+                // Time greeting — contextual phrase then app name
+                Text(thoiGianVM.current.greetingPhrase)
+                    .font(ZenFont.title())
+                    .foregroundColor(thoiGianVM.current.textPrimary)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom, 8)
+                    .padding(.top, 16)
                     .accessibilityAddTraits(.isHeader)
+                    .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
 
-                // Teapot canvas — 240×240 pt with gold glow shadow
-                TraXongView()
-                    .frame(width: 240, height: 240)
+                Text("Trạm Thiền Trà")
+                    .font(ZenFont.caption())
+                    .foregroundColor(thoiGianVM.current.textSecondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 4)
+                    .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
+
+                Spacer(minLength: 20)
+
+                // Teapot canvas — 220×220 pt with gold glow shadow
+                TeapotSceneView()
+                    .frame(width: 220, height: 220)
                     .shadow(
                         color: ZenColor.zenGold.opacity(0.35),
                         radius: 20,
@@ -61,48 +71,86 @@ struct TraThatView: View {
                     .accessibilityLabel("Trạm Thiền Trà – ấm trà thiền định")
                     .accessibilityHidden(false)
 
-                Spacer()
+                Spacer().frame(height: 20)
 
-                // Action buttons
-                VStack(spacing: 12) {
-                    ZenButton("Tích luỹ", variant: .primary, icon: "drop.fill") {
-                        showTichLuy = true
-                    }
-                    .accessibilityLabel("Tích luỹ")
-                    .accessibilityHint("Mở màn hình ghi lại điều biết ơn hôm nay")
-
-                    ZenButton("Buông bỏ", variant: .secondary) {
-                        showBuongBo = true
-                    }
-                    .accessibilityLabel("Buông bỏ")
-                    .accessibilityHint("Mở màn hình viết ra và buông bỏ những lo âu")
-                }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 20)
-
-                // Streak bar wrapped in ZenCard
+                // Streak card — elevated between teapot and dock
                 ZenCard {
                     CayThienView(streak: streakViewModel.streak, stage: streakViewModel.stage)
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 32)
+
+                Spacer().frame(height: 16)
+
+                // Bottom action dock — glassmorphism container
+                VStack(spacing: 10) {
+                    ZenButton("Biết ơn", variant: .primary, icon: "drop.fill") {
+                        showTichLuy = true
+                    }
+                    .accessibilityLabel("Biết ơn")
+                    .accessibilityHint("Mở màn hình ghi lại điều biết ơn hôm nay")
+                    .frame(maxWidth: .infinity)
+
+                    HStack(spacing: 10) {
+                        ZenButton("Buông bỏ", variant: .secondary, icon: "leaf.fill") {
+                            showBuongBo = true
+                        }
+                        .accessibilityLabel("Buông bỏ")
+                        .accessibilityHint("Mở màn hình viết ra và buông bỏ những lo âu")
+                        .frame(maxWidth: .infinity)
+
+                        ZenButton("Thiền Thở", variant: .secondary, icon: "wind") {
+                            showThienTho = true
+                        }
+                        .accessibilityLabel("Thiền Thở")
+                        .accessibilityHint("Mở màn hình thiền thở")
+                        .frame(maxWidth: .infinity)
+                    }
+                }
+                .padding(16)
+                .background {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 24)
+                            .fill(.ultraThinMaterial)
+                        RoundedRectangle(cornerRadius: 24)
+                            .fill(
+                                thoiGianVM.current.dockOverlayColor
+                                    .opacity(thoiGianVM.current.dockOverlayOpacity)
+                            )
+                            .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
+                        RoundedRectangle(cornerRadius: 24)
+                            .stroke(Color.white.opacity(0.4), lineWidth: 1)
+                    }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .shadow(color: ZenColor.zenBrown.opacity(0.10), radius: 20, x: 0, y: 8)
+                .padding(.horizontal, 20)
+
+                Spacer().frame(height: 32)
             }
         }
         .sheet(isPresented: $showSettings) {
             NavigationStack {
                 SettingsView()
             }
+            .environmentObject(thoiGianVM)
         }
         .sheet(isPresented: $showHistory) {
             NavigationStack {
                 HistoryView()
             }
+            .environmentObject(thoiGianVM)
         }
         .fullScreenCover(isPresented: $showTichLuy) {
             TichLuyView()
+                .environmentObject(thoiGianVM)
         }
         .fullScreenCover(isPresented: $showBuongBo) {
             BuongBoView()
+                .environmentObject(thoiGianVM)
+        }
+        .fullScreenCover(isPresented: $showThienTho) {
+            ThienThoView()
+                .environmentObject(thoiGianVM)
         }
     }
 
@@ -118,20 +166,23 @@ struct TraThatView: View {
         Button(action: action) {
             Image(systemName: systemName)
                 .font(.system(size: 18, weight: .medium))
-                .foregroundColor(ZenColor.zenBrown)
-                .frame(width: 44, height: 44)
+                .foregroundColor(thoiGianVM.current.navIconTint)
+                .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
+                .frame(width: 36, height: 36)
                 .background(
-                    ZStack {
-                        Circle().fill(.ultraThinMaterial)
-                        Circle().fill(Color.white.opacity(0.45))
-                        Circle().stroke(Color.white.opacity(0.6), lineWidth: 1)
-                    }
+                    Circle().fill(Color.white.opacity(0.25))
                 )
-                .shadow(color: ZenColor.zenBrown.opacity(0.08), radius: 8, x: 0, y: 3)
+                .frame(width: 44, height: 44)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel(accessibilityLabel)
         .accessibilityHint(accessibilityHint)
     }
+}
+
+#Preview {
+    TraThatView()
+        .environmentObject(ThoiGianViewModel())
+        .environmentObject(StreakViewModel())
 }

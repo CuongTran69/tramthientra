@@ -17,7 +17,7 @@ final class TichLuyViewModel: ObservableObject {
         !item1.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
-    func saveGratitude(modelContext: ModelContext) async {
+    func saveGratitude(modelContext: ModelContext) async throws {
         guard isFormValid else { return }
         isSaving = true
         defer { isSaving = false }
@@ -36,14 +36,16 @@ final class TichLuyViewModel: ObservableObject {
 
         do {
             try modelContext.save()
-            // Reset form
-            item1 = ""
-            item2 = ""
-            item3 = ""
-            HapticService.shared.playSuccess()
-            try await SyncService.shared.syncLog(log)
         } catch {
             print("[TichLuy] Save failed: \(error)")
+            throw error
         }
+
+        // Reset form only after a successful save
+        item1 = ""
+        item2 = ""
+        item3 = ""
+        HapticService.shared.playSuccess()
+        try? await SyncService.shared.syncLog(log)
     }
 }

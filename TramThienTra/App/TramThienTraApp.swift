@@ -7,6 +7,7 @@ import SwiftData
 @main
 struct TramThienTraApp: App {
     @StateObject private var streakViewModel = StreakViewModel()
+    @StateObject private var thoiGianViewModel = ThoiGianViewModel()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -25,6 +26,7 @@ struct TramThienTraApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(streakViewModel)
+                .environmentObject(thoiGianViewModel)
         }
         .modelContainer(sharedModelContainer)
     }
@@ -34,12 +36,20 @@ struct TramThienTraApp: App {
 // TODO: Implement routing based on hasCompletedOnboarding (SPEC §2.1)
 struct ContentView: View {
     @AppStorage(Constants.hasCompletedOnboardingKey) private var hasCompletedOnboarding: Bool = false
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
-        if hasCompletedOnboarding {
-            TraThatView()
-        } else {
-            OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+        Group {
+            if hasCompletedOnboarding {
+                TraThatView()
+            } else {
+                OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+            }
+        }
+        .task {
+            if AuthService.shared.getCurrentUserId() != nil {
+                await SyncService.shared.syncAllPending(modelContext: modelContext)
+            }
         }
     }
 }

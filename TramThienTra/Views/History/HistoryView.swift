@@ -340,3 +340,15 @@ struct HistoryRowPreview: View {
         )
     }
 }
+
+#Preview {
+    let container = try! ModelContainer(
+        for: GratitudeLog.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+    return NavigationStack {
+        HistoryView()
+    }
+    .modelContainer(container)
+    .environmentObject(ThoiGianViewModel())
+}

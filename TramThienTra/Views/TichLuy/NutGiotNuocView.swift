@@ -14,6 +14,9 @@ import SwiftUI
 struct NutGiotNuocView: View {
     let isEnabled: Bool
     let action: () -> Void
+    var icon: String = "drop.fill"
+    var label: String = "Lưu nhật ký biết ơn"
+    var hint: String? = nil
 
     @State private var isPressed = false
     @State private var rippleScale: CGFloat = 1
@@ -65,7 +68,7 @@ struct NutGiotNuocView: View {
                         y: 4
                     )
                     .overlay(
-                        Image(systemName: "drop.fill")
+                        Image(systemName: icon)
                             .font(.system(size: 28, weight: .medium))
                             .foregroundColor(isEnabled ? ZenColor.zenSage : Color.gray.opacity(0.6))
                     )
@@ -82,10 +85,10 @@ struct NutGiotNuocView: View {
         }
         .buttonStyle(.plain)
         .disabled(!isEnabled)
-        .accessibilityLabel("Lưu nhật ký biết ơn")
-        .accessibilityHint(isEnabled
+        .accessibilityLabel(label)
+        .accessibilityHint(hint ?? (isEnabled
             ? "Lưu lại những điều biết ơn của bạn hôm nay"
-            : "Hãy nhập ít nhất một điều biết ơn để có thể lưu")
+            : "Hãy nhập ít nhất một điều biết ơn để có thể lưu"))
         .accessibilityAddTraits(.isButton)
         .onAppear { startGlowPulseIfNeeded() }
         .onChange(of: isEnabled) { _, _ in startGlowPulseIfNeeded() }

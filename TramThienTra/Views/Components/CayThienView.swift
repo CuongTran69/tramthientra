@@ -18,6 +18,7 @@ struct CayThienView: View {
     @State private var animatedStage: StreakViewModel.LeafStage = .seed
     @State private var bounceScale: CGFloat = 1.0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @EnvironmentObject var thoiGianVM: ThoiGianViewModel
 
     var body: some View {
         HStack(spacing: 12) {
@@ -32,10 +33,10 @@ struct CayThienView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(animatedStage.title)
                     .zenHeadline()
-                    .foregroundColor(.white)
+                    .foregroundColor(thoiGianVM.current.streakTextPrimary)
                 Text("\(streak) ngày")
                     .zenCaption()
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(thoiGianVM.current.streakTextSecondary)
             }
 
             Spacer()
@@ -44,15 +45,15 @@ struct CayThienView: View {
             HStack(spacing: 4) {
                 ForEach(0..<6, id: \.self) { index in
                     Circle()
-                        .fill(index <= animatedStage.rawValue ? Color.white : Color.white.opacity(0.3))
+                        .fill(index <= animatedStage.rawValue ? thoiGianVM.current.streakTextPrimary : thoiGianVM.current.streakTextSecondary.opacity(0.4))
                         .frame(width: 8, height: 8)
                 }
             }
             .accessibilityHidden(true)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background(Color.white.opacity(0.15))
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(thoiGianVM.current == .traDenDem ? Color.white.opacity(0.15) : thoiGianVM.current.streakTextPrimary.opacity(0.08))
         .cornerRadius(20)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(animatedStage.title), streak \(streak) ngày")

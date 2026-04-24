@@ -8,31 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		0246B9A74238114ACA04F5B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */; };
+		187D6138CEB1746916730DA4 /* BreathingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F728F9F702A41C07463E158 /* BreathingCircleView.swift */; };
 		1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C2CA4CD5125D42B9AF046 /* NotificationService.swift */; };
 		1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */; };
 		22782413F9E182E149FA267D /* ThoiGian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */; };
 		2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */; };
 		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
 		2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBAE530579BB6E5AB26C81 /* ZenButton.swift */; };
+		31E380032F9B03DD00B06B7A /* ThoiGianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */; };
+		A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */; };
 		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
 		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
 		428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */; };
 		45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D5EEF66C34A3E948966C /* SyncService.swift */; };
-		4C6D1CE44A1BEC15D0764A95 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */; };
 		5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE49956611304772681CBB /* BuongBoViewModel.swift */; };
-		5533AE86AFC667A4B82DDB8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2300CB6A0022D62658BAEB09 /* SnapKit */; };
 		5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58B7359C89E0249337DD5F /* SettingsView.swift */; };
 		5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE023640EA5125DD8F119E30 /* StreakViewModel.swift */; };
+		74FCA93C9BB92E71CF2E55F5 /* ThienThoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */; };
 		78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22A0D104486E778E63D627 /* LoginPromptView.swift */; };
 		7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FEA37D704438F92E2B94A /* AppUser.swift */; };
 		83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* CayThienView.swift */; };
 		8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */; };
 		938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */; };
+		9FD742F16AE0D964410465BF /* ThienThoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */; };
 		A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CE552EA5A94449E88C4D8 /* AuthService.swift */; };
 		A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */; };
 		AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */; };
 		B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */; };
-		B86955EAAF725186FEAE8914 /* TraXongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6216DB8498C3720CFCF5FC4D /* TraXongView.swift */; };
 		BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */; };
 		CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */; };
 		CCF1D72CC697778C8E76BDB9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123799F7D2A4641BD12A789 /* Constants.swift */; };
@@ -43,6 +45,7 @@
 		F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0475BFB114C60C9BB1994A /* HistoryView.swift */; };
 		F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574D3646B525654F2976C31 /* ZenTextField.swift */; };
 		F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188AA5D389C237F588BFAE9 /* BuongBoView.swift */; };
+		F6A1B2C3D4E5F60718293A4B /* ZenScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +64,16 @@
 		15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhoiTanView.swift; sourceTree = "<group>"; };
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGianViewModel.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeapotSceneView.swift; sourceTree = "<group>"; };
 		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
 		3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenCard.swift; sourceTree = "<group>"; };
+		3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoViewModel.swift; sourceTree = "<group>"; };
 		4123799F7D2A4641BD12A789 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGian.swift; sourceTree = "<group>"; };
 		4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		4F728F9F702A41C07463E158 /* BreathingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCircleView.swift; sourceTree = "<group>"; };
 		537FEA37D704438F92E2B94A /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
-		6216DB8498C3720CFCF5FC4D /* TraXongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraXongView.swift; sourceTree = "<group>"; };
 		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7ADFD90BFDC40BD010689 /* CayThienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayThienView.swift; sourceTree = "<group>"; };
 		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,27 +92,17 @@
 		C3EE49956611304772681CBB /* BuongBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoViewModel.swift; sourceTree = "<group>"; };
 		C77CE552EA5A94449E88C4D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyViewModel.swift; sourceTree = "<group>"; };
+		CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoView.swift; sourceTree = "<group>"; };
 		D31CE06981925B6E2448C76B /* NenDongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NenDongView.swift; sourceTree = "<group>"; };
 		D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = droplet.wav; sourceTree = "<group>"; };
 		DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatView.swift; sourceTree = "<group>"; };
 		DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		DD163F9E0094D003BC976AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenScreenHeader.swift; sourceTree = "<group>"; };
 		E16CCB53D08B6A8A511AB84F /* TramThienTra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TramThienTra.entitlements; sourceTree = "<group>"; };
 		F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramThienTraApp.swift; sourceTree = "<group>"; };
 		F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		5B8789175F5861CD81F9EBF3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5533AE86AFC667A4B82DDB8E /* SnapKit in Frameworks */,
-				4C6D1CE44A1BEC15D0764A95 /* Kingfisher in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		06272493A9A41CD5968B611E /* Products */ = {
@@ -142,9 +138,16 @@
 			isa = PBXGroup;
 			children = (
 				DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */,
-				6216DB8498C3720CFCF5FC4D /* TraXongView.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */,
 			);
 			path = TraThat;
+			sourceTree = "<group>";
+		};
+		44CA240E6938800747D777FE /* TapTrung */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TapTrung;
 			sourceTree = "<group>";
 		};
 		474F2ED6504C4EC78809E72A /* TichLuy */ = {
@@ -165,6 +168,7 @@
 				D31CE06981925B6E2448C76B /* NenDongView.swift */,
 				88CBAE530579BB6E5AB26C81 /* ZenButton.swift */,
 				3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */,
+				E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */,
 				7574D3646B525654F2976C31 /* ZenTextField.swift */,
 			);
 			path = Components;
@@ -178,6 +182,8 @@
 				A0DE6AD1ED43A64FF32EE12B /* History */,
 				7CC94DF8AF39AE86AC69778C /* Onboarding */,
 				ED51AF698E09E6F5B5781AD1 /* Settings */,
+				44CA240E6938800747D777FE /* TapTrung */,
+				7B60DF940EDCD954E894DEE2 /* ThienTho */,
 				474F2ED6504C4EC78809E72A /* TichLuy */,
 				406CAF8096413F608F9DFA87 /* TraThat */,
 			);
@@ -203,12 +209,23 @@
 		670990F94266D51CE12DDD08 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */,
 				C3EE49956611304772681CBB /* BuongBoViewModel.swift */,
 				BE023640EA5125DD8F119E30 /* StreakViewModel.swift */,
+				3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */,
 				CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */,
 				AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7B60DF940EDCD954E894DEE2 /* ThienTho */ = {
+			isa = PBXGroup;
+			children = (
+				4F728F9F702A41C07463E158 /* BreathingCircleView.swift */,
+				CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */,
+			);
+			path = ThienTho;
 			sourceTree = "<group>";
 		};
 		7CC94DF8AF39AE86AC69778C /* Onboarding */ = {
@@ -316,7 +333,6 @@
 			buildPhases = (
 				274870B3B33A27ACBB805F4E /* Sources */,
 				6B18E464AAF286B24AF980F0 /* Resources */,
-				5B8789175F5861CD81F9EBF3 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,8 +340,6 @@
 			);
 			name = TramThienTra;
 			packageProductDependencies = (
-				2300CB6A0022D62658BAEB09 /* SnapKit */,
-				0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */,
 			);
 			productName = TramThienTra;
 			productReference = 707EEF0995934D58FD9F1CCC /* TramThienTra.app */;
@@ -354,10 +368,6 @@
 			);
 			mainGroup = 89754E9C1F33D03538D74E51;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 06272493A9A41CD5968B611E /* Products */;
 			projectDirPath = "";
@@ -390,6 +400,7 @@
 				7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */,
 				CF694433CFAA76E26FCAF407 /* AppleDangNhapView.swift in Sources */,
 				A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */,
+				187D6138CEB1746916730DA4 /* BreathingCircleView.swift in Sources */,
 				F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */,
 				5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */,
 				83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */,
@@ -397,6 +408,7 @@
 				AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */,
 				2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */,
 				8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */,
+				A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */,
 				F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */,
 				A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */,
 				78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */,
@@ -407,15 +419,18 @@
 				5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */,
 				5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */,
 				45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */,
+				74FCA93C9BB92E71CF2E55F5 /* ThienThoView.swift in Sources */,
+				9FD742F16AE0D964410465BF /* ThienThoViewModel.swift in Sources */,
 				22782413F9E182E149FA267D /* ThoiGian.swift in Sources */,
 				938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */,
 				38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */,
 				1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */,
 				BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */,
-				B86955EAAF725186FEAE8914 /* TraXongView.swift in Sources */,
 				D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */,
+				31E380032F9B03DD00B06B7A /* ThoiGianViewModel.swift in Sources */,
 				2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */,
 				2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */,
+				F6A1B2C3D4E5F60718293A4B /* ZenScreenHeader.swift in Sources */,
 				F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,38 +692,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.10.0;
-			};
-		};
-		BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0F83ABCEFE9B49EFBEBFECB7 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9992F4E48665E887E46E2222 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		2300CB6A0022D62658BAEB09 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BDB120404F1199396482E9B1 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8D5D9D30E243E621ED255D1 /* Project object */;
 }

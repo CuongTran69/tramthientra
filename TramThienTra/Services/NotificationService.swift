@@ -12,12 +12,17 @@ final class NotificationService {
     private init() {}
 
     /// Request notification authorization from the user.
-    func requestAuthorization() {
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            if let error = error {
-                print("[NotificationService] Auth error: \(error.localizedDescription)")
+    /// Returns true if authorization was granted.
+    @discardableResult
+    func requestAuthorization() async -> Bool {
+        await withCheckedContinuation { continuation in
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if let error = error {
+                    print("[NotificationService] Auth error: \(error.localizedDescription)")
+                }
+                print("[NotificationService] Authorization granted: \(granted)")
+                continuation.resume(returning: granted)
             }
-            print("[NotificationService] Authorization granted: \(granted)")
         }
     }
 
