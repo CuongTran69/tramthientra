@@ -1,1 +1,40 @@
 .gitnexus
+
+# Xcode
+*.xcodeproj/
+!*.xcodeproj/project.xcworkspace/
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/
+!*.xcworkspace/xcshareddata/
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Build
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods (future-proofing)
+Pods/
+
+# Fastlane (future-proofing)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# Misc
+*.hmap
+*.o
+*.pch
+*.obj
