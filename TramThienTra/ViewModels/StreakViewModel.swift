@@ -6,24 +6,24 @@ import SwiftUI
 @MainActor
 final class StreakViewModel: ObservableObject {
     @Published var streak: Int = 0
-    @Published var stage: LeafStage = .seed
+    @Published var stage: LeafStage = .hatTra
 
     enum LeafStage: Int, CaseIterable {
-        case seed = 0
-        case sprout = 1
-        case young = 2
-        case green = 3
-        case lush = 4
-        case greatTree = 5
+        case hatTra = 0
+        case mamTra = 1
+        case bupNon = 2
+        case laNon = 3
+        case laXanh = 4
+        case traChin = 5
 
         var title: String {
             switch self {
-            case .seed: return "Hạt giống"
-            case .sprout: return "Mầm non"
-            case .young: return "Cây non"
-            case .green: return "Cây xanh"
-            case .lush: return "Cây tươi tốt"
-            case .greatTree: return "Đại thụ"
+            case .hatTra: return "Hạt Trà"
+            case .mamTra: return "Mầm Trà"
+            case .bupNon: return "Búp Non"
+            case .laNon: return "Lá Non"
+            case .laXanh: return "Lá Xanh"
+            case .traChin: return "Trà Chín"
             }
         }
     }
@@ -41,12 +41,12 @@ final class StreakViewModel: ObservableObject {
 
     func checkStreak() {
         switch streak {
-        case 0: stage = .seed
-        case 1...3: stage = .sprout
-        case 4...7: stage = .young
-        case 8...14: stage = .green
-        case 15...29: stage = .lush
-        default: stage = streak >= 30 ? .greatTree : .seed
+        case 0: stage = .hatTra
+        case 1...3: stage = .mamTra
+        case 4...7: stage = .bupNon
+        case 8...14: stage = .laNon
+        case 15...29: stage = .laXanh
+        default: stage = streak >= 30 ? .traChin : .hatTra
         }
     }
 }

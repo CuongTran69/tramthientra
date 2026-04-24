@@ -66,6 +66,22 @@ enum ZenColor {
     static let zenGold = Color(hex: "#D4A574")
     /// Warm cream — light background base (#F5EDE4)
     static let zenCream = Color(hex: "#F5EDE4")
+
+    // MARK: Tea-leaf stage tokens
+    /// Early sprout stage fill (#8AAE7A)
+    static let zenTeaSpring = Color(hex: "#8AAE7A")
+    /// Young bud stage fill (#7BA27B)
+    static let zenTeaLight = Color(hex: "#7BA27B")
+    /// Mature leaf stage fill (#5A7F5A)
+    static let zenTeaDeep = Color(hex: "#5A7F5A")
+    /// Master stage fill (#4D7A4D)
+    static let zenTeaRich = Color(hex: "#4D7A4D")
+    /// Vein detail lines on leaf shapes (#4A6B4A)
+    static let zenTeaVein = Color(hex: "#4A6B4A")
+    /// Desaturated color for broken streaks (#8A7A60)
+    static let zenTeaWilted = Color(hex: "#8A7A60")
+    /// Warm night-gold — traDenDem background tint (#C8A882)
+    static let zenNightGold = Color(hex: "#C8A882")
 }
 
 // MARK: - Text / background color helpers (adaptive to light & dark mode)

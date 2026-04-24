@@ -75,7 +75,7 @@ struct TraThatView: View {
 
                 // Streak card — elevated between teapot and dock
                 ZenCard {
-                    CayThienView(streak: streakViewModel.streak, stage: streakViewModel.stage)
+                    LaTraView(streak: streakViewModel.streak, stage: streakViewModel.stage)
                 }
                 .padding(.horizontal, 20)
 
@@ -118,7 +118,7 @@ struct TraThatView: View {
                             )
                             .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                         RoundedRectangle(cornerRadius: 24)
-                            .stroke(Color.white.opacity(0.4), lineWidth: 1)
+                            .stroke(thoiGianVM.current.dockStrokeColor, lineWidth: 1)
                     }
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 24))
@@ -170,7 +170,7 @@ struct TraThatView: View {
                 .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                 .frame(width: 36, height: 36)
                 .background(
-                    Circle().fill(Color.white.opacity(0.25))
+                    Circle().fill(thoiGianVM.current.navIconBgColor.opacity(thoiGianVM.current.navIconBgOpacity))
                 )
                 .frame(width: 44, height: 44)
                 .contentShape(Circle())

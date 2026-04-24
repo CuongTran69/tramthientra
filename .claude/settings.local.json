@@ -70,7 +70,27 @@
       "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' build)",
       "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.2' build)",
       "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' -quiet build)",
-      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.2' -quiet build)"
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.2' -quiet build)",
+      "Bash(git -C /Users/cuongtran/Project/ZenTea/TramThienTra log --oneline -10)",
+      "Bash(git -C /Users/cuongtran/Project/ZenTea/TramThienTra remote -v)",
+      "Bash(xcode-select -p)",
+      "Bash(gh auth:*)",
+      "Bash(chmod +x /Users/cuongtran/Project/ZenTea/TramThienTra/ci_scripts/ci_post_clone.sh)",
+      "Bash(git status:*)",
+      "Bash(git -C /Users/cuongtran/Project/ZenTea/TramThienTra log --oneline -5)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:uxpilot.ai)",
+      "WebFetch(domain:www.accessibilitychecker.org)",
+      "WebFetch(domain:hexcolor.co)",
+      "WebFetch(domain:colorkit.co)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' build)",
+      "Bash(xcodebuild -project TramThienTra.xcodeproj -scheme TramThienTra -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max' build)",
+      "Bash(openspec init:*)",
+      "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 16' build)",
+      "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' build)",
+      "Bash(git rm:*)"
     ]
   }
 }

@@ -16,7 +16,6 @@
 		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
 		2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBAE530579BB6E5AB26C81 /* ZenButton.swift */; };
 		31E380032F9B03DD00B06B7A /* ThoiGianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */; };
-		A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */; };
 		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
 		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
 		428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */; };
@@ -27,11 +26,12 @@
 		74FCA93C9BB92E71CF2E55F5 /* ThienThoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */; };
 		78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22A0D104486E778E63D627 /* LoginPromptView.swift */; };
 		7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FEA37D704438F92E2B94A /* AppUser.swift */; };
-		83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* CayThienView.swift */; };
+		83CE08FF00216108D4E121B0 /* LaTraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* LaTraView.swift */; };
 		8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */; };
 		938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */; };
 		9FD742F16AE0D964410465BF /* ThienThoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */; };
 		A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CE552EA5A94449E88C4D8 /* AuthService.swift */; };
+		A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */; };
 		A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */; };
 		AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */; };
 		B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */; };
@@ -65,7 +65,6 @@
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
 		31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGianViewModel.swift; sourceTree = "<group>"; };
-		B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeapotSceneView.swift; sourceTree = "<group>"; };
 		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
 		3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenCard.swift; sourceTree = "<group>"; };
 		3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoViewModel.swift; sourceTree = "<group>"; };
@@ -75,7 +74,7 @@
 		4F728F9F702A41C07463E158 /* BreathingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCircleView.swift; sourceTree = "<group>"; };
 		537FEA37D704438F92E2B94A /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		66B7ADFD90BFDC40BD010689 /* CayThienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CayThienView.swift; sourceTree = "<group>"; };
+		66B7ADFD90BFDC40BD010689 /* LaTraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTraView.swift; sourceTree = "<group>"; };
 		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7574D3646B525654F2976C31 /* ZenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenTextField.swift; sourceTree = "<group>"; };
 		7F22A0D104486E778E63D627 /* LoginPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptView.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		A188AA5D389C237F588BFAE9 /* BuongBoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoView.swift; sourceTree = "<group>"; };
 		A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatViewModel.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeapotSceneView.swift; sourceTree = "<group>"; };
 		BA0475BFB114C60C9BB1994A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		BB58B7359C89E0249337DD5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BE023640EA5125DD8F119E30 /* StreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakViewModel.swift; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatView.swift; sourceTree = "<group>"; };
 		DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		DD163F9E0094D003BC976AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenScreenHeader.swift; sourceTree = "<group>"; };
 		E16CCB53D08B6A8A511AB84F /* TramThienTra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TramThienTra.entitlements; sourceTree = "<group>"; };
+		E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenScreenHeader.swift; sourceTree = "<group>"; };
 		F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramThienTraApp.swift; sourceTree = "<group>"; };
 		F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */,
-				66B7ADFD90BFDC40BD010689 /* CayThienView.swift */,
+				66B7ADFD90BFDC40BD010689 /* LaTraView.swift */,
 				7F22A0D104486E778E63D627 /* LoginPromptView.swift */,
 				D31CE06981925B6E2448C76B /* NenDongView.swift */,
 				88CBAE530579BB6E5AB26C81 /* ZenButton.swift */,
@@ -403,7 +403,7 @@
 				187D6138CEB1746916730DA4 /* BreathingCircleView.swift in Sources */,
 				F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */,
 				5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */,
-				83CE08FF00216108D4E121B0 /* CayThienView.swift in Sources */,
+				83CE08FF00216108D4E121B0 /* LaTraView.swift in Sources */,
 				CCF1D72CC697778C8E76BDB9 /* Constants.swift in Sources */,
 				AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */,
 				2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */,
@@ -532,6 +532,7 @@
 				DEVELOPMENT_TEAM = QWP9AN675X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TramThienTra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trạm Thiền Trà";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +540,11 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -614,6 +619,7 @@
 				DEVELOPMENT_TEAM = QWP9AN675X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TramThienTra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Trạm Thiền Trà";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,7 +627,11 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

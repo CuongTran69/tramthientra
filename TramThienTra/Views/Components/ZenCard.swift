@@ -30,15 +30,15 @@ struct ZenCard<Content: View>: View {
                         .fill(.ultraThinMaterial)
                     // Secondary overlay: white wash with slot-driven opacity
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(thoiGianVM.current.cardOverlayOpacity))
+                        .fill(thoiGianVM.current.cardOverlayColor.opacity(thoiGianVM.current.cardOverlayOpacity))
                         .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                     // Subtle inner highlight along the top edge
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(
                             LinearGradient(
                                 colors: [
-                                    Color.white.opacity(0.9),
-                                    Color.white.opacity(0.25)
+                                    thoiGianVM.current.cardStrokeTop,
+                                    thoiGianVM.current.cardStrokeBottom
                                 ],
                                 startPoint: .top,
                                 endPoint: .bottom

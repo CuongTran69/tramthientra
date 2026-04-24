@@ -27,6 +27,7 @@ struct ZenButton: View {
 
     @State private var isPressed = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @EnvironmentObject var thoiGianVM: ThoiGianViewModel
 
     init(
         _ title: String,
@@ -49,7 +50,15 @@ struct ZenButton: View {
         }) {
             buttonContent
         }
-        .buttonStyle(ZenButtonStyle(variant: variant, isPressed: $isPressed, reduceMotion: reduceMotion))
+        .buttonStyle(ZenButtonStyle(
+            variant: variant,
+            isPressed: $isPressed,
+            reduceMotion: reduceMotion,
+            primaryGradientStart: thoiGianVM.current.primaryButtonGradientStart,
+            primaryGradientEnd: thoiGianVM.current.primaryButtonGradientEnd,
+            secondaryStroke: thoiGianVM.current.secondaryButtonStroke,
+            secondaryFill: thoiGianVM.current.secondaryButtonFill
+        ))
     }
 
     @ViewBuilder
@@ -62,7 +71,7 @@ struct ZenButton: View {
             Text(title)
                 .font(ZenFont.headline())
         }
-        .foregroundColor(variant == .primary ? .white : ZenColor.zenBrown)
+        .foregroundColor(variant == .primary ? .white : thoiGianVM.current.secondaryButtonText)
         .padding(.horizontal, 28)
         .padding(.vertical, 14)
         .frame(maxWidth: .infinity)
@@ -75,6 +84,10 @@ private struct ZenButtonStyle: ButtonStyle {
     let variant: ZenButton.Variant
     @Binding var isPressed: Bool
     let reduceMotion: Bool
+    let primaryGradientStart: Color
+    let primaryGradientEnd: Color
+    let secondaryStroke: Color
+    let secondaryFill: Color
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -84,7 +97,7 @@ private struct ZenButtonStyle: ButtonStyle {
                     RoundedRectangle(cornerRadius: 14)
                         .fill(
                             LinearGradient(
-                                colors: [ZenColor.zenBrown, ZenColor.zenBrownDark],
+                                colors: [primaryGradientStart, primaryGradientEnd],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
@@ -94,11 +107,11 @@ private struct ZenButtonStyle: ButtonStyle {
                         RoundedRectangle(cornerRadius: 14)
                             .fill(
                                 configuration.isPressed
-                                    ? ZenColor.zenSage.opacity(0.1)
+                                    ? secondaryFill
                                     : Color.clear
                             )
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(ZenColor.zenSage, lineWidth: 1)
+                            .stroke(secondaryStroke, lineWidth: 1)
                     }
                 }
             }
@@ -135,4 +148,5 @@ private struct ZenButtonStyle: ButtonStyle {
         }
         .padding(.horizontal, 32)
     }
+    .environmentObject(ThoiGianViewModel())
 }

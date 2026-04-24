@@ -47,7 +47,7 @@ enum ThoiGian: Int, CaseIterable {
             return [Color(hex: "F9EDE3"), Color(hex: "F0DFD0"), Color(hex: "E5CEB8")]
         case .traDenDem:
             // Night: deep plum → dark navy → near-black
-            return [Color(hex: "2D2B3A"), Color(hex: "1F1D28"), Color(hex: "141318")]
+            return [Color(hex: "2A2535"), Color(hex: "1E1A26"), Color(hex: "15121C")]
         }
     }
 
@@ -71,7 +71,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return textPrimary.opacity(0.85)
         case .chieuTa:   return textPrimary.opacity(0.80)
         case .hoangHon:  return textPrimary.opacity(0.78)
-        case .traDenDem: return textPrimary.opacity(0.70)
+        case .traDenDem: return textPrimary.opacity(0.75)
         }
     }
 
@@ -84,7 +84,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color(hex: "2C4A5A")
         case .chieuTa:   return Color(hex: "5C3A10")
         case .hoangHon:  return Color(hex: "6B3A1A")
-        case .traDenDem: return Color(hex: "C8B8A0")
+        case .traDenDem: return Color(hex: "E8D5B8")
         }
     }
 
@@ -108,7 +108,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color(hex: "D0F0FF")
         case .chieuTa:   return Color(hex: "FFD8A0")
         case .hoangHon:  return Color(hex: "FF8C42")
-        case .traDenDem: return Color(hex: "8080C0")
+        case .traDenDem: return Color(hex: "D4A060")
         }
     }
 
@@ -119,7 +119,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 0.50
         case .chieuTa:   return 0.45
         case .hoangHon:  return 0.55
-        case .traDenDem: return 0.40
+        case .traDenDem: return 0.55
         }
     }
 
@@ -132,7 +132,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color(hex: "E8F4FC")
         case .chieuTa:   return Color(hex: "FFF4E0")
         case .hoangHon:  return Color(hex: "FFE4C0")
-        case .traDenDem: return Color(hex: "C0C0E0")
+        case .traDenDem: return Color(hex: "D4B896")
         }
     }
 
@@ -143,7 +143,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 0.18
         case .chieuTa:   return 0.22
         case .hoangHon:  return 0.30
-        case .traDenDem: return 0.20
+        case .traDenDem: return 0.15
         }
     }
 
@@ -154,7 +154,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 4
         case .chieuTa:   return 5
         case .hoangHon:  return 7
-        case .traDenDem: return 3
+        case .traDenDem: return 4
         }
     }
 
@@ -167,7 +167,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color(hex: "E8F2F8")
         case .chieuTa:   return Color(hex: "F5E8D0")
         case .hoangHon:  return Color(hex: "F0DEC8")
-        case .traDenDem: return Color(hex: "1A1828")
+        case .traDenDem: return Color(hex: "3A3548")
         }
     }
 
@@ -178,7 +178,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 0.28
         case .chieuTa:   return 0.30
         case .hoangHon:  return 0.25
-        case .traDenDem: return 0.08
+        case .traDenDem: return 0.70
         }
     }
 
@@ -191,7 +191,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 0.45
         case .chieuTa:   return 0.48
         case .hoangHon:  return 0.42
-        case .traDenDem: return 0.10
+        case .traDenDem: return 0.65
         }
     }
 
@@ -220,7 +220,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color.white
         case .chieuTa:   return Color(hex: "D0B080")
         case .hoangHon:  return Color(hex: "C0804A")
-        case .traDenDem: return Color(hex: "8080A8")
+        case .traDenDem: return Color(hex: "C8A882")
         }
     }
 
@@ -231,7 +231,7 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return 0.12
         case .chieuTa:   return 0.14
         case .hoangHon:  return 0.18
-        case .traDenDem: return 0.22
+        case .traDenDem: return 0.18
         }
     }
 
@@ -242,7 +242,94 @@ enum ThoiGian: Int, CaseIterable {
         case .banNgay:   return Color(hex: "A0C8D8")
         case .chieuTa:   return Color(hex: "D4904A")
         case .hoangHon:  return Color(hex: "D4663A")
-        case .traDenDem: return Color(hex: "7878B8")
+        case .traDenDem: return Color(hex: "C8924A")
+        }
+    }
+
+    // MARK: - Card overlay color
+
+    var cardOverlayColor: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "3A3548")
+        default: return .white
+        }
+    }
+
+    // MARK: - Card stroke colors
+
+    var cardStrokeTop: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882").opacity(0.45)
+        default: return Color.white.opacity(0.9)
+        }
+    }
+
+    var cardStrokeBottom: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882").opacity(0.12)
+        default: return Color.white.opacity(0.25)
+        }
+    }
+
+    // MARK: - Nav icon background
+
+    var navIconBgColor: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882")
+        default: return .white
+        }
+    }
+
+    var navIconBgOpacity: Double {
+        switch self {
+        case .traDenDem: return 0.20
+        default: return 0.25
+        }
+    }
+
+    // MARK: - Dock stroke
+
+    var dockStrokeColor: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882").opacity(0.30)
+        default: return Color.white.opacity(0.4)
+        }
+    }
+
+    // MARK: - Button colors (night-adaptive)
+
+    var primaryButtonGradientStart: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8924A")
+        default: return ZenColor.zenBrown
+        }
+    }
+
+    var primaryButtonGradientEnd: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "A87530")
+        default: return ZenColor.zenBrownDark
+        }
+    }
+
+    var secondaryButtonStroke: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882").opacity(0.50)
+        default: return ZenColor.zenSage
+        }
+    }
+
+    var secondaryButtonFill: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "C8A882").opacity(0.08)
+        default: return .clear
+        }
+    }
+
+    var secondaryButtonText: Color {
+        switch self {
+        case .traDenDem: return Color(hex: "E8D5B8")
+        default: return ZenColor.zenBrown
         }
     }
 
@@ -268,6 +355,44 @@ enum ThoiGian: Int, CaseIterable {
         case .chieuTa:   return "Chiều tà thong thả"
         case .hoangHon:  return "Hoàng hôn nhẹ nhàng"
         case .traDenDem: return "Đêm trà thư giãn"
+        }
+    }
+
+    // MARK: - Leaf appearance (time-adaptive)
+
+    /// Time-of-day tint applied to tea leaf shapes.
+    var leafTint: Color {
+        switch self {
+        case .suongSom:  return Color(hex: "8AAE7A")
+        case .buoiSang:  return Color(hex: "6B8F6B")
+        case .banNgay:   return Color(hex: "5A8A6A")
+        case .chieuTa:   return Color(hex: "7A9A5A")
+        case .hoangHon:  return Color(hex: "6B7F55")
+        case .traDenDem: return Color(hex: "9DB89D")
+        }
+    }
+
+    /// Time-of-day glow color applied around tea leaf shapes.
+    var leafGlow: Color {
+        switch self {
+        case .suongSom:  return Color(hex: "D4E8D0")
+        case .buoiSang:  return Color.clear
+        case .banNgay:   return Color(hex: "C0E0D8")
+        case .chieuTa:   return Color(hex: "E8D8B0")
+        case .hoangHon:  return Color(hex: "D4A574")
+        case .traDenDem: return Color(hex: "C8A882")
+        }
+    }
+
+    /// Opacity for the leaf glow shadow/overlay.
+    var leafGlowOpacity: Double {
+        switch self {
+        case .suongSom:  return 0.20
+        case .buoiSang:  return 0.0
+        case .banNgay:   return 0.12
+        case .chieuTa:   return 0.18
+        case .hoangHon:  return 0.22
+        case .traDenDem: return 0.25
         }
     }
 }
