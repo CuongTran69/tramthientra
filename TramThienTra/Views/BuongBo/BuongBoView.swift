@@ -35,7 +35,7 @@ struct BuongBoView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         // Section helper text — caption tone, matches TichLuyView pattern
-                        Text("Viết ra những gì đang làm bạn trì trệ, rồi buông bỏ. Không ai đọc được.")
+                        Text("Viết ra những muộn phiền đang vướng bận, rồi nhẹ nhàng buông bỏ. Trạm sẽ giữ kín những tâm sự này cho riêng bình yên của bạn.")
                             .font(ZenFont.caption())
                             .foregroundColor(thoiGianVM.current.textSecondary)
                             .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)

@@ -25,26 +25,26 @@ struct TichLuyView: View {
     // MARK: - Gratitude Quotes
 
     private static let gratitudeQuotes: [(quote: String, author: String)] = [
-        ("Bi\u{1EBF}t \u{01A1}n l\u{00E0} h\u{1EA1}nh ph\u{00FA}c \u{0111}\u{01A1}n gi\u{1EA3}n nh\u{1EA5}t.", ""),
-        ("Gi\u{1ECD}t n\u{01B0}\u{1EDB}c nh\u{1ECF} l\u{00E0}m \u{0111}\u{1EA7}y \u{0111}\u{1EA1}i d\u{01B0}\u{01A1}ng.", ""),
-        ("M\u{1ED7}i ng\u{00E0}y \u{0111}\u{1EC1}u l\u{00E0} m\u{1ED9}t m\u{00F3}n qu\u{00E0}.", ""),
-        ("H\u{1EA1}t gi\u{1ED1}ng bi\u{1EBF}t \u{01A1}n s\u{1EBD} n\u{1EDF} hoa h\u{1EA1}nh ph\u{00FA}c.", ""),
-        ("L\u{00F2}ng bi\u{1EBF}t \u{01A1}n bi\u{1EBF}n nh\u{1EEF}ng g\u{00EC} ta c\u{00F3} th\u{00E0}nh \u{0111}\u{1EE7} \u{0111}\u{1EA7}y.", ""),
-        ("Khi bi\u{1EBF}t \u{01A1}n, ta th\u{1EA5}y \u{0111}\u{1EDD}i \u{0111}\u{1EB9}p h\u{01A1}n.", ""),
-        ("H\u{1EA1}nh ph\u{00FA}c kh\u{00F4}ng \u{1EDF} \u{0111}\u{00E2}u xa, m\u{00E0} \u{1EDF} ngay trong l\u{00F2}ng bi\u{1EBF}t \u{01A1}n.", ""),
-        ("M\u{1ED9}t tr\u{00E1}i tim bi\u{1EBF}t \u{01A1}n l\u{00E0} m\u{1ED9}t tr\u{00E1}i tim h\u{1EA1}nh ph\u{00FA}c.", ""),
-        ("Cu\u{1ED9}c s\u{1ED1}ng kh\u{00F4}ng ho\u{00E0}n h\u{1EA3}o, nh\u{01B0}ng lu\u{00F4}n c\u{00F3} \u{0111}i\u{1EC1}u \u{0111}\u{00E1}ng tr\u{00E2}n tr\u{1ECD}ng.", ""),
-        ("Bi\u{1EBF}t \u{01A1}n h\u{00F4}m nay, b\u{00EC}nh an ng\u{00E0}y mai.", ""),
-        ("N\u{01B0}\u{1EDB}c ch\u{1EA3}y \u{0111}\u{00E1} m\u{00F2}n, \u{01A1}n s\u{00E2}u ngh\u{0129}a n\u{1EB7}ng.", ""),
-        ("\u{0102}n qu\u{1EA3} nh\u{1EDB} k\u{1EBB} tr\u{1ED3}ng c\u{00E2}y.", "Ca dao Vi\u{1EC7}t Nam"),
-        ("U\u{1ED1}ng n\u{01B0}\u{1EDB}c nh\u{1EDB} ngu\u{1ED3}n.", "Ca dao Vi\u{1EC7}t Nam"),
-        ("M\u{1ED9}t ch\u{00FA}t bi\u{1EBF}t \u{01A1}n m\u{1ED7}i ng\u{00E0}y, \u{0111}\u{1ED5}i thay c\u{1EA3} cu\u{1ED9}c \u{0111}\u{1EDD}i.", ""),
-        ("Tr\u{00E2}n tr\u{1ECD}ng \u{0111}i\u{1EC1}u nh\u{1ECF}, nh\u{1EAD}n ra h\u{1EA1}nh ph\u{00FA}c l\u{1EDB}n.", ""),
-        ("Kh\u{00F4}ng c\u{00F3} g\u{00EC} l\u{00E0} \u{0111}\u{01B0}\u{01A1}ng nhi\u{00EA}n, m\u{1ECD}i th\u{1EE9} \u{0111}\u{1EC1}u l\u{00E0} \u{00E2}n ph\u{00FA}c.", ""),
-        ("S\u{1ED1}ng ch\u{1EAD}m l\u{1EA1}i, bi\u{1EBF}t \u{01A1}n nhi\u{1EC1}u h\u{01A1}n.", ""),
-        ("L\u{00E1} r\u{01A1}i v\u{1EC1} c\u{1ED9}i, n\u{01B0}\u{1EDB}c ch\u{1EA3}y v\u{1EC1} ngu\u{1ED3}n.", "Ca dao Vi\u{1EC7}t Nam"),
-        ("Bi\u{1EBF}t \u{0111}\u{1EE7} th\u{00EC} \u{0111}\u{1EE7}, \u{0111}\u{1EE3}i \u{0111}\u{1EE7} bao gi\u{1EDD} \u{0111}\u{1EE7}.", ""),
-        ("T\u{00E2}m an, v\u{1EA1}n s\u{1EF1} an.", ""),
+        ("Lòng biết ơn biến những gì ta có thành sự đủ đầy viên mãn.", ""),
+        ("Một chén trà trong, một nụ cười nhẹ, ngần ấy thôi đã là hạnh phúc trọn vẹn.", ""),
+        ("Thở vào tâm tĩnh lặng, thở ra miệng mỉm cười.", ""),
+        ("Trân trọng trọn vẹn từng khoảnh khắc hiện tại, bình yên sẽ tự tìm về.", ""),
+        ("Hạnh phúc không nằm ở việc sở hữu nhiều hơn, mà là biết ơn những gì ta đang có.", ""),
+        ("Khi tĩnh lặng nhìn lại, mọi điều nhỏ bé đều là một ân phước.", ""),
+        ("Đóa hoa hạnh phúc chỉ nở rộ trên mảnh đất của lòng biết ơn.", ""),
+        ("Chậm lại một chút để lắng nghe nhịp đập của sự sống đang thầm lặng trôi.", ""),
+        ("Mỗi giọt sương mai, mỗi ngọn gió mát đều mang đến một lời nhắc nhở nhẹ nhàng.", ""),
+        ("Mỗi buổi sáng thức dậy là một món quà mới để ta thêm trân quý cuộc đời.", ""),
+        ("Bình yên không phải là khi đời lặng im, mà là khi lòng không gợn sóng.", ""),
+        ("Sự tĩnh tại thực sự bắt nguồn từ một trái tim biết đón nhận và tha thứ.", ""),
+        ("Chén trà ngon nhất là chén trà được thưởng thức bằng trọn vẹn sự chú tâm.", ""),
+        ("Không có điều gì là hiển nhiên, mọi thứ đến trong đời đều xứng đáng được nói lời cảm ơn.", ""),
+        ("Khởi đầu ngày mới bằng lòng biết ơn, kết thúc một ngày bằng sự thanh thản.", ""),
+        ("Hạt giống an nhiên nảy mầm từ phần tĩnh lặng nhất của tâm hồn.", ""),
+        ("Một chút lòng biết ơn gom nhặt mỗi ngày, sẽ tưới mát cả một đời người.", ""),
+        ("Chỉ khi lòng nhẹ nhàng buông bỏ những ưu phiền, niềm vui mới có không gian đậu lại.", ""),
+        ("Mái hiên tĩnh lặng, gió nhẹ mây trôi. Trân trọng hiện tại, vạn sự tuỳ duyên.", ""),
+        ("Trái tim luôn ghi nhớ những ân tình là khởi nguồn cho vạn sự bình an.", "")
     ]
 
     // MARK: - Body
@@ -69,7 +69,7 @@ struct TichLuyView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         // Section label + decoration
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Ba \u{0111}i\u{1EC1}u bi\u{1EBF}t \u{01A1}n h\u{00F4}m nay")
+                            Text("Lưu giữ ba điều biết ơn ngày hôm nay")
                                 .font(ZenFont.subheadline())
                                 .foregroundColor(thoiGianVM.current.textSecondary)
                                 .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)

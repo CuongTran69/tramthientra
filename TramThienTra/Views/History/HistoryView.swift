@@ -215,12 +215,12 @@ struct HistoryView: View {
             .accessibilityHidden(true)
 
             VStack(spacing: 8) {
-                Text("Chưa có kỷ niệm nào được ghi lại")
+                Text("Góc nhỏ này vẫn đang chờ đợi những ân tình")
                     .font(ZenFont.subheadline())
                     .foregroundColor(ZenColor.zenBrownDark)
                     .multilineTextAlignment(.center)
 
-                Text("Hãy bắt đầu tích luỹ những điều biết ơn.")
+                Text("Hãy bắt đầu gom nhặt những điều biết ơn nhỏ bé ngày hôm nay.")
                     .font(ZenFont.caption())
                     .foregroundColor(ZenColor.zenBrown.opacity(0.55))
                     .multilineTextAlignment(.center)

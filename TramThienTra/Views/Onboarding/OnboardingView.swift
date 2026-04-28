@@ -10,18 +10,18 @@ struct OnboardingView: View {
 
     private let pages: [OnboardingPage] = [
         OnboardingPage(
-            title: "Chào mừng đến Trạm Thiền Trà",
-            subtitle: "Mỗi ngày, một tách trà. Mỗi ngày, một bước gần hơn với con người ta.",
+            title: "Trạm Thiền Trà",
+            subtitle: "Hương trà tĩnh tâm, hơi thở an trí. Hãy để mỗi ngày là một bước chân thong dong trở về với sự bình yên vẹn tròn.",
             viewType: .teaPot
         ),
         OnboardingPage(
-            title: "Nghi thức Tích luỹ",
-            subtitle: "Ghi lại 3 điều bạn biết ơn mỗi ngày. Những điều nhỏ bé thường là quý giá nhất. Như sương mai trên núi, như hương sen hồ Tây.",
+            title: "Nghi thức Biết ơn",
+            subtitle: "Nhặt nhạnh những niềm vui bé nhỏ. Từng ân tình được lưu lại tựa giọt sương mai đọng trên phiến lá, trong trẻo và bình an.",
             viewType: .drop
         ),
         OnboardingPage(
             title: "Nghi thức Buông bỏ",
-            subtitle: "Viết ra những bực dọc, buồn phiền. Rồi buông nó đi — chúng tan theo làn khói trà, nhẹ nhàng như chưa từng có.",
+            subtitle: "Viết ra những phiền muộn vương vấn, rồi nhắm mắt để chúng tan biến theo làn khói mờ. Trả lại cho tâm hồn sự tĩnh tại vốn có.",
             viewType: .smoke
         )
     ]
