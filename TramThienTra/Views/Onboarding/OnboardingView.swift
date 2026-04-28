@@ -28,11 +28,9 @@ struct OnboardingView: View {
 
     var body: some View {
         ZStack {
-            // Time-adaptive background
             NenDongView()
                 .ignoresSafeArea()
 
-            // Decorative soft halo behind illustrations — time-adaptive
             Circle()
                 .fill(
                     RadialGradient(
