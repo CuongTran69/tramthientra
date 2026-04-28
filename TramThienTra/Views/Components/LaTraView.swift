@@ -45,7 +45,7 @@ struct LaTraView: View {
                 Text(animatedStage.title)
                     .zenHeadline()
                     .foregroundColor(thoiGianVM.current.streakTextPrimary)
-                Text("\(streak) ngay")
+                Text("\(streak) ngày")
                     .zenCaption()
                     .foregroundColor(thoiGianVM.current.streakTextSecondary)
             }
@@ -73,7 +73,7 @@ struct LaTraView: View {
         )
         .cornerRadius(20)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(animatedStage.title), streak \(streak) ngay")
+        .accessibilityLabel("\(animatedStage.title), streak \(streak) ngày")
         .onAppear {
             // First render: set stage without bouncing
             animatedStage = stage

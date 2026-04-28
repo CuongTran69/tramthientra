@@ -90,7 +90,8 @@
       "Bash(openspec init:*)",
       "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 16' build)",
       "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' build)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max' build)"
     ]
   }
 }
