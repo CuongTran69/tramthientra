@@ -46,6 +46,8 @@
 		F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574D3646B525654F2976C31 /* ZenTextField.swift */; };
 		F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188AA5D389C237F588BFAE9 /* BuongBoView.swift */; };
 		F6A1B2C3D4E5F60718293A4B /* ZenScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */; };
+		3E2710BCC20B417CA9D4CC54 /* NotificationPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E628D318143A784288567 /* NotificationPromptView.swift */; };
+		724AB3B852094ED58A354DD6 /* NotificationReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		074C2CA4CD5125D42B9AF046 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		CE4E628D318143A784288567 /* NotificationPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPromptView.swift; sourceTree = "<group>"; };
+		528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationReminderService.swift; sourceTree = "<group>"; };
 		150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeLog.swift; sourceTree = "<group>"; };
 		15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhoiTanView.swift; sourceTree = "<group>"; };
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				C77CE552EA5A94449E88C4D8 /* AuthService.swift */,
 				4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */,
 				074C2CA4CD5125D42B9AF046 /* NotificationService.swift */,
+				528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */,
 				21A5D5EEF66C34A3E948966C /* SyncService.swift */,
 			);
 			path = Services;
@@ -166,6 +171,7 @@
 				66B7ADFD90BFDC40BD010689 /* LaTraView.swift */,
 				7F22A0D104486E778E63D627 /* LoginPromptView.swift */,
 				D31CE06981925B6E2448C76B /* NenDongView.swift */,
+				CE4E628D318143A784288567 /* NotificationPromptView.swift */,
 				88CBAE530579BB6E5AB26C81 /* ZenButton.swift */,
 				3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */,
 				E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */,
@@ -414,6 +420,8 @@
 				78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */,
 				D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */,
 				1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */,
+				3E2710BCC20B417CA9D4CC54 /* NotificationPromptView.swift in Sources */,
+				724AB3B852094ED58A354DD6 /* NotificationReminderService.swift in Sources */,
 				B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */,
 				CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */,
 				5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */,

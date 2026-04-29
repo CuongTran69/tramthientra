@@ -1,7 +1,7 @@
 import Foundation
 import UserNotifications
 
-// MARK: - SPEC §3.4 Local notification scheduling — daily 21:00 reminder
+// MARK: - SPEC §3.4 Local notification scheduling — daily reminder with custom time
 
 final class NotificationService {
     static let shared = NotificationService()
@@ -26,9 +26,45 @@ final class NotificationService {
         }
     }
 
-    /// Schedule a daily reminder at 21:00.
-    func scheduleDailyReminder() {
+    // MARK: - SPEC: Authorization status check without prompting
+
+    /// Query the current notification authorization status without triggering a new system permission prompt.
+    /// Returns `true` only if `authorizationStatus == .authorized`.
+    func checkCurrentAuthorizationStatus() async -> Bool {
+        let settings = await center.notificationSettings()
+        return settings.authorizationStatus == .authorized
+    }
+
+    // MARK: - SPEC: Schedule daily reminder with configurable time
+
+    /// Schedule a daily reminder notification.
+    ///
+    /// Fallback priority for hour/minute:
+    /// 1. Provided parameters (if non-nil)
+    /// 2. UserDefaults values (`notificationHour` / `notificationMinute`)
+    /// 3. Constants defaults (`Constants.notificationHour` / `Constants.notificationMinute`)
+    func scheduleDailyReminder(hour: Int? = nil, minute: Int? = nil) {
         cancelAllPendingNotifications()
+
+        let defaults = UserDefaults.standard
+        let resolvedHour: Int
+        let resolvedMinute: Int
+
+        if let hour = hour {
+            resolvedHour = hour
+        } else if defaults.object(forKey: Constants.notificationHourKey) != nil {
+            resolvedHour = defaults.integer(forKey: Constants.notificationHourKey)
+        } else {
+            resolvedHour = Constants.notificationHour
+        }
+
+        if let minute = minute {
+            resolvedMinute = minute
+        } else if defaults.object(forKey: Constants.notificationMinuteKey) != nil {
+            resolvedMinute = defaults.integer(forKey: Constants.notificationMinuteKey)
+        } else {
+            resolvedMinute = Constants.notificationMinute
+        }
 
         let content = UNMutableNotificationContent()
         content.title = "Trạm Thiền Trà"
@@ -37,8 +73,8 @@ final class NotificationService {
         content.badge = 1
 
         var dateComponents = DateComponents()
-        dateComponents.hour = Constants.notificationHour
-        dateComponents.minute = Constants.notificationMinute
+        dateComponents.hour = resolvedHour
+        dateComponents.minute = resolvedMinute
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(

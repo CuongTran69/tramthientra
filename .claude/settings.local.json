@@ -92,7 +92,9 @@
       "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' build)",
       "Bash(git rm:*)",
       "Bash(xcodebuild -scheme TramThienTra -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max' build)",
-      "WebFetch(domain:www.browserstack.com)"
+      "WebFetch(domain:www.browserstack.com)",
+      "Bash(python3 -c \"import uuid; print\\(uuid.uuid4\\(\\).hex[:24].upper\\(\\)\\); print\\(uuid.uuid4\\(\\).hex[:24].upper\\(\\)\\); print\\(uuid.uuid4\\(\\).hex[:24].upper\\(\\)\\); print\\(uuid.uuid4\\(\\).hex[:24].upper\\(\\)\\)\")",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }

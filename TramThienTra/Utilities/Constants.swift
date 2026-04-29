@@ -15,6 +15,10 @@ enum Constants {
     static let streakKey = "streak_count"
     static let hasCompletedOnboardingKey = "hasCompletedOnboarding"
     static let dailyReminderEnabledKey = "dailyReminderEnabled"
+    static let notificationHourKey = "notificationHour"
+    static let notificationMinuteKey = "notificationMinute"
+    static let lastNotificationPromptDateKey = "lastNotificationPromptDate"
+    static let notificationPromptDismissCountKey = "notificationPromptDismissCount"
 
     // Limits
     static let maxGratitudeItems = 3

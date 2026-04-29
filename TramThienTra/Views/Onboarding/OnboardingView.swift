@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - SPEC §2.2 Onboarding — 3-page introduction (redesigned)
+// MARK: - SPEC §2.2 Onboarding — 4-page introduction with notification permission step
 
 struct OnboardingView: View {
     @Binding var hasCompletedOnboarding: Bool
@@ -23,8 +23,16 @@ struct OnboardingView: View {
             title: "Nghi thức Buông bỏ",
             subtitle: "Viết ra những phiền muộn vương vấn, rồi nhắm mắt để chúng tan biến theo làn khói mờ. Trả lại cho tâm hồn sự tĩnh tại vốn có.",
             viewType: .smoke
+        ),
+        OnboardingPage(
+            title: "Nhắc nhở hàng ngày",
+            subtitle: "Để mỗi ngày đều trọn vẹn, hãy để Trạm Thiền Trà nhẹ nhàng nhắc bạn dành chút thời gian tạ ơn cuộc sống.",
+            viewType: .bell
         )
     ]
+
+    /// Index of the notification page (last page)
+    private var notificationPageIndex: Int { pages.count - 1 }
 
     var body: some View {
         ZStack {
@@ -102,17 +110,45 @@ struct OnboardingView: View {
                 .padding(.bottom, 24)
                 .accessibilityLabel("Trang \(currentPage + 1) trong \(pages.count)")
 
-                // Action: "Bắt đầu" on last page, else "Tiếp theo"
-                VStack(spacing: 0) {
-                    if currentPage == pages.count - 1 {
-                        ZenButton("Bắt đầu", variant: .primary) {
-                            withAnimation { completeOnboarding() }
+                // MARK: - Action buttons
+
+                VStack(spacing: 12) {
+                    if currentPage == notificationPageIndex {
+                        // MARK: - SPEC: Notification page — accept / skip actions
+
+                        ZenButton("Bật thông báo", variant: .primary, icon: "bell.fill") {
+                            Task {
+                                let granted = await NotificationService.shared.requestAuthorization()
+                                if granted {
+                                    UserDefaults.standard.set(true, forKey: Constants.dailyReminderEnabledKey)
+                                    NotificationService.shared.scheduleDailyReminder()
+                                } else {
+                                    UserDefaults.standard.set(false, forKey: Constants.dailyReminderEnabledKey)
+                                }
+                                withAnimation { completeOnboarding() }
+                            }
                         }
                         .padding(.horizontal, 20)
-                        .padding(.bottom, 32)
-                        .accessibilityLabel("Bắt đầu")
-                        .accessibilityHint("Hoàn tất giới thiệu và bắt đầu sử dụng ứng dụng")
+                        .accessibilityLabel("Bật thông báo")
+                        .accessibilityHint("Cho phép nhắc nhở hàng ngày và hoàn tất giới thiệu")
+
+                        Button {
+                            UserDefaults.standard.set(false, forKey: Constants.dailyReminderEnabledKey)
+                            withAnimation { completeOnboarding() }
+                        } label: {
+                            Text("Bỏ qua")
+                                .font(ZenFont.subheadline())
+                                .foregroundColor(thoiGianVM.current.textSecondary)
+                                .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
+                                .frame(minWidth: 44, minHeight: 44)
+                                .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.bottom, 20)
+                        .accessibilityLabel("Bỏ qua")
+                        .accessibilityHint("Bỏ qua thông báo và hoàn tất giới thiệu")
                     } else {
+                        // Content pages: "Tiếp theo" on all non-notification pages
                         ZenButton("Tiếp theo", variant: .primary) {
                             withAnimation { currentPage += 1 }
                         }
@@ -135,7 +171,7 @@ struct OnboardingView: View {
 // MARK: - Illustration type
 
 enum IllustrationType {
-    case teaPot, drop, smoke
+    case teaPot, drop, smoke, bell
 }
 
 struct OnboardingPage {
@@ -168,6 +204,12 @@ struct OnboardingPageView: View {
                     NutGiotNuocView(isEnabled: false, action: {}, icon: "drop.fill", label: "Giọt nước biết ơn")
                 case .smoke:
                     KhoiTanView()
+                case .bell:
+                    // MARK: - SPEC: Bell illustration for notification onboarding page
+                    Image(systemName: "bell.badge.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(ZenColor.zenGold)
                 }
             }
             .frame(width: 180, height: 180)

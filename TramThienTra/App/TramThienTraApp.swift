@@ -32,11 +32,13 @@ struct TramThienTraApp: App {
     }
 }
 
-// MARK: - Content View placeholder
-// TODO: Implement routing based on hasCompletedOnboarding (SPEC §2.1)
+// MARK: - Content View with notification reminder integration
 struct ContentView: View {
     @AppStorage(Constants.hasCompletedOnboardingKey) private var hasCompletedOnboarding: Bool = false
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
+    @EnvironmentObject var thoiGianVM: ThoiGianViewModel
+    @StateObject private var notificationReminderService = NotificationReminderService()
 
     var body: some View {
         Group {
@@ -50,6 +52,22 @@ struct ContentView: View {
             if AuthService.shared.getCurrentUserId() != nil {
                 await SyncService.shared.syncAllPending(modelContext: modelContext)
             }
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                notificationReminderService.checkAndUpdatePromptStatus()
+            }
+        }
+        .sheet(isPresented: $notificationReminderService.shouldShowPrompt) {
+            NotificationPromptView(
+                onAccept: {
+                    notificationReminderService.acceptPrompt()
+                },
+                onDismiss: {
+                    notificationReminderService.dismissPrompt()
+                }
+            )
+            .environmentObject(thoiGianVM)
         }
     }
 }
