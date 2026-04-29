@@ -358,6 +358,20 @@ enum ThoiGian: Int, CaseIterable {
         }
     }
 
+    // MARK: - Music preset
+
+    /// Background music preset name mapped to each time slot.
+    var musicPreset: String {
+        switch self {
+        case .suongSom:  return "ambient"    // Sáng sớm: nhẹ nhàng, tĩnh lặng
+        case .buoiSang:  return "piano"      // Buổi sáng: tươi sáng, rõ ràng
+        case .banNgay:   return "lofi"       // Ban ngày: nhịp nhàng, tập trung
+        case .chieuTa:   return "cinematic"  // Chiều tà: ấm áp, sâu lắng
+        case .hoangHon:  return "dark"       // Hoàng hôn: trầm, chuyển tối
+        case .traDenDem: return "nighttea"   // Đêm: ru ngủ, cực chậm, cực nhẹ
+        }
+    }
+
     // MARK: - Leaf appearance (time-adaptive)
 
     /// Time-of-day tint applied to tea leaf shapes.

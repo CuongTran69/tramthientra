@@ -7,33 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01694AF362D30E1EAAEE2E61 /* ZenScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF6BDAFEDC92F7CBA4022C /* ZenScreenHeader.swift */; };
 		0246B9A74238114ACA04F5B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */; };
+		0551B9168245D60257245C75 /* TeapotSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6713CED8ABD6CF8A29E73E4B /* TeapotSceneView.swift */; };
+		1444838C3716FBA4BFBECF9D /* SamHoiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067252E15C678AA61A2BA252 /* SamHoiViewModel.swift */; };
 		187D6138CEB1746916730DA4 /* BreathingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F728F9F702A41C07463E158 /* BreathingCircleView.swift */; };
 		1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C2CA4CD5125D42B9AF046 /* NotificationService.swift */; };
 		1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */; };
 		22782413F9E182E149FA267D /* ThoiGian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */; };
+		2AA7A5761C6A60C6CAD65061 /* nighttea.js in Resources */ = {isa = PBXBuildFile; fileRef = E13F88DDE292C085618D1157 /* nighttea.js */; };
 		2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */; };
 		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
 		2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBAE530579BB6E5AB26C81 /* ZenButton.swift */; };
-		31E380032F9B03DD00B06B7A /* ThoiGianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */; };
 		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
 		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
+		387E476EB97965B31DE89BAD /* LaTraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD018DBD7C7A23BB84648D6 /* LaTraView.swift */; };
+		3D1C7968DC8EF103BCF2714A /* dark.js in Resources */ = {isa = PBXBuildFile; fileRef = 1E211697294F774097D35512 /* dark.js */; };
+		415017C896441F9CCA8EF678 /* NotificationReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06680E732C138DF1F6680E /* NotificationReminderService.swift */; };
 		428BA7B9E23A4D3A9284C314 /* TramThienTraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE340C74BA6FE912F703BF7D /* TramThienTraTests.swift */; };
 		45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D5EEF66C34A3E948966C /* SyncService.swift */; };
+		4B9A21A04CF95E5C4CB01670 /* NotificationPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC7DE7EA580F03B47F6AC8 /* NotificationPromptView.swift */; };
 		5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE49956611304772681CBB /* BuongBoViewModel.swift */; };
 		5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58B7359C89E0249337DD5F /* SettingsView.swift */; };
 		5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE023640EA5125DD8F119E30 /* StreakViewModel.swift */; };
+		5BE1D8AC92ADECFA143CA0E1 /* ThoiGianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254F332F2202F307EC929E1 /* ThoiGianViewModel.swift */; };
+		61BE90B087173FE6A7DAA719 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B0E6E468374529B346432 /* AudioService.swift */; };
+		67AFCBAFC950DCAC50E9D973 /* ambient.js in Resources */ = {isa = PBXBuildFile; fileRef = F64AF9BF7D6EA6B40308CEE3 /* ambient.js */; };
 		74FCA93C9BB92E71CF2E55F5 /* ThienThoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */; };
 		78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22A0D104486E778E63D627 /* LoginPromptView.swift */; };
 		7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FEA37D704438F92E2B94A /* AppUser.swift */; };
-		83CE08FF00216108D4E121B0 /* LaTraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7ADFD90BFDC40BD010689 /* LaTraView.swift */; };
 		8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */; };
 		938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */; };
 		9FD742F16AE0D964410465BF /* ThienThoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */; };
 		A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CE552EA5A94449E88C4D8 /* AuthService.swift */; };
-		A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */; };
 		A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */; };
 		AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */; };
+		AE7D9C5658E278F85D64CCDD /* lofi.js in Resources */ = {isa = PBXBuildFile; fileRef = A034A49C1C400E973D872ADB /* lofi.js */; };
+		AF9E9150D72E5CBA6889C675 /* cinematic.js in Resources */ = {isa = PBXBuildFile; fileRef = E20B9F089F1D00BDF43131C2 /* cinematic.js */; };
 		B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */; };
 		BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */; };
 		CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */; };
@@ -42,12 +52,11 @@
 		D059D168AE3FD3D9223B6E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD163F9E0094D003BC976AFF /* Assets.xcassets */; };
 		D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CE06981925B6E2448C76B /* NenDongView.swift */; };
 		D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */; };
+		E4A22DBC2A6EA54CF5BB6475 /* piano.js in Resources */ = {isa = PBXBuildFile; fileRef = 522597577310905CDE853832 /* piano.js */; };
+		E701D8455FDBA23162EB1699 /* SamHoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563AECD04C055124530C1B7 /* SamHoiView.swift */; };
 		F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0475BFB114C60C9BB1994A /* HistoryView.swift */; };
 		F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574D3646B525654F2976C31 /* ZenTextField.swift */; };
 		F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188AA5D389C237F588BFAE9 /* BuongBoView.swift */; };
-		F6A1B2C3D4E5F60718293A4B /* ZenScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */; };
-		3E2710BCC20B417CA9D4CC54 /* NotificationPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E628D318143A784288567 /* NotificationPromptView.swift */; };
-		724AB3B852094ED58A354DD6 /* NotificationReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		067252E15C678AA61A2BA252 /* SamHoiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamHoiViewModel.swift; sourceTree = "<group>"; };
 		074C2CA4CD5125D42B9AF046 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		CE4E628D318143A784288567 /* NotificationPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPromptView.swift; sourceTree = "<group>"; };
-		528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationReminderService.swift; sourceTree = "<group>"; };
 		150FBCC834BF03DFB44583C2 /* GratitudeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeLog.swift; sourceTree = "<group>"; };
+		1563AECD04C055124530C1B7 /* SamHoiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamHoiView.swift; sourceTree = "<group>"; };
 		15C9D4472C3591EFD5003A57 /* KhoiTanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhoiTanView.swift; sourceTree = "<group>"; };
+		1E211697294F774097D35512 /* dark.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = dark.js; sourceTree = "<group>"; };
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
-		31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGianViewModel.swift; sourceTree = "<group>"; };
 		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
 		3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenCard.swift; sourceTree = "<group>"; };
 		3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoViewModel.swift; sourceTree = "<group>"; };
@@ -76,19 +85,24 @@
 		45BE3E65AE2027ED5DEE41DA /* ThoiGian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGian.swift; sourceTree = "<group>"; };
 		4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		4F728F9F702A41C07463E158 /* BreathingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCircleView.swift; sourceTree = "<group>"; };
+		522597577310905CDE853832 /* piano.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = piano.js; sourceTree = "<group>"; };
 		537FEA37D704438F92E2B94A /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
-		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		66B7ADFD90BFDC40BD010689 /* LaTraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTraView.swift; sourceTree = "<group>"; };
-		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		576B0E6E468374529B346432 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		63C880B0BE0D9042F8811E9C /* TramThienTraTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TramThienTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65FC7DE7EA580F03B47F6AC8 /* NotificationPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPromptView.swift; sourceTree = "<group>"; };
+		6713CED8ABD6CF8A29E73E4B /* TeapotSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeapotSceneView.swift; sourceTree = "<group>"; };
+		707EEF0995934D58FD9F1CCC /* TramThienTra.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TramThienTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7574D3646B525654F2976C31 /* ZenTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenTextField.swift; sourceTree = "<group>"; };
 		7F22A0D104486E778E63D627 /* LoginPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPromptView.swift; sourceTree = "<group>"; };
 		88CBAE530579BB6E5AB26C81 /* ZenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenButton.swift; sourceTree = "<group>"; };
 		8A6FE97B41FC5BA80E80A072 /* NutGiotNuocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutGiotNuocView.swift; sourceTree = "<group>"; };
+		9BAF6BDAFEDC92F7CBA4022C /* ZenScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenScreenHeader.swift; sourceTree = "<group>"; };
 		9E0C25CA78D22EEDDE63F1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A034A49C1C400E973D872ADB /* lofi.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = lofi.js; sourceTree = "<group>"; };
 		A188AA5D389C237F588BFAE9 /* BuongBoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuongBoView.swift; sourceTree = "<group>"; };
 		A796ABEE0BA5AF54D0E948D9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatViewModel.swift; sourceTree = "<group>"; };
-		B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeapotSceneView.swift; sourceTree = "<group>"; };
+		AE06680E732C138DF1F6680E /* NotificationReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationReminderService.swift; sourceTree = "<group>"; };
 		BA0475BFB114C60C9BB1994A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		BB58B7359C89E0249337DD5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BE023640EA5125DD8F119E30 /* StreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakViewModel.swift; sourceTree = "<group>"; };
@@ -97,15 +111,19 @@
 		C77CE552EA5A94449E88C4D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyViewModel.swift; sourceTree = "<group>"; };
 		CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoView.swift; sourceTree = "<group>"; };
+		D254F332F2202F307EC929E1 /* ThoiGianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGianViewModel.swift; sourceTree = "<group>"; };
 		D31CE06981925B6E2448C76B /* NenDongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NenDongView.swift; sourceTree = "<group>"; };
 		D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = droplet.wav; sourceTree = "<group>"; };
 		DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatView.swift; sourceTree = "<group>"; };
 		DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		DD163F9E0094D003BC976AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFD018DBD7C7A23BB84648D6 /* LaTraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTraView.swift; sourceTree = "<group>"; };
+		E13F88DDE292C085618D1157 /* nighttea.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = nighttea.js; sourceTree = "<group>"; };
 		E16CCB53D08B6A8A511AB84F /* TramThienTra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TramThienTra.entitlements; sourceTree = "<group>"; };
-		E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenScreenHeader.swift; sourceTree = "<group>"; };
+		E20B9F089F1D00BDF43131C2 /* cinematic.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cinematic.js; sourceTree = "<group>"; };
 		F039E3FD204250C8938F3DF4 /* TramThienTraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramThienTraApp.swift; sourceTree = "<group>"; };
 		F5DD3FF1BEA4159BF3D09595 /* TichLuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TichLuyView.swift; sourceTree = "<group>"; };
+		F64AF9BF7D6EA6B40308CEE3 /* ambient.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ambient.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -121,13 +139,22 @@
 		146BA32D9F7F2937874FDE91 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				576B0E6E468374529B346432 /* AudioService.swift */,
 				C77CE552EA5A94449E88C4D8 /* AuthService.swift */,
 				4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */,
+				AE06680E732C138DF1F6680E /* NotificationReminderService.swift */,
 				074C2CA4CD5125D42B9AF046 /* NotificationService.swift */,
-				528B2F57459E4FB0A51ED408 /* NotificationReminderService.swift */,
 				21A5D5EEF66C34A3E948966C /* SyncService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1C2F8887A33833189A876D73 /* SamHoi */ = {
+			isa = PBXGroup;
+			children = (
+				1563AECD04C055124530C1B7 /* SamHoiView.swift */,
+			);
+			path = SamHoi;
 			sourceTree = "<group>";
 		};
 		1E01665E274697C971396D2A /* Models */ = {
@@ -142,8 +169,8 @@
 		406CAF8096413F608F9DFA87 /* TraThat */ = {
 			isa = PBXGroup;
 			children = (
+				6713CED8ABD6CF8A29E73E4B /* TeapotSceneView.swift */,
 				DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */,
-				B2C3D4E5F6A7B8C9D0E1F2A3 /* TeapotSceneView.swift */,
 			);
 			path = TraThat;
 			sourceTree = "<group>";
@@ -168,13 +195,13 @@
 			isa = PBXGroup;
 			children = (
 				35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */,
-				66B7ADFD90BFDC40BD010689 /* LaTraView.swift */,
+				DFD018DBD7C7A23BB84648D6 /* LaTraView.swift */,
 				7F22A0D104486E778E63D627 /* LoginPromptView.swift */,
 				D31CE06981925B6E2448C76B /* NenDongView.swift */,
-				CE4E628D318143A784288567 /* NotificationPromptView.swift */,
+				65FC7DE7EA580F03B47F6AC8 /* NotificationPromptView.swift */,
 				88CBAE530579BB6E5AB26C81 /* ZenButton.swift */,
 				3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */,
-				E7B2C3D4F5A6071829304B5C /* ZenScreenHeader.swift */,
+				9BAF6BDAFEDC92F7CBA4022C /* ZenScreenHeader.swift */,
 				7574D3646B525654F2976C31 /* ZenTextField.swift */,
 			);
 			path = Components;
@@ -187,6 +214,7 @@
 				49FD87D76F9F57B3A656A268 /* Components */,
 				A0DE6AD1ED43A64FF32EE12B /* History */,
 				7CC94DF8AF39AE86AC69778C /* Onboarding */,
+				1C2F8887A33833189A876D73 /* SamHoi */,
 				ED51AF698E09E6F5B5781AD1 /* Settings */,
 				44CA240E6938800747D777FE /* TapTrung */,
 				7B60DF940EDCD954E894DEE2 /* ThienTho */,
@@ -215,10 +243,11 @@
 		670990F94266D51CE12DDD08 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				31E380022F9B03DD00B06B7A /* ThoiGianViewModel.swift */,
 				C3EE49956611304772681CBB /* BuongBoViewModel.swift */,
+				067252E15C678AA61A2BA252 /* SamHoiViewModel.swift */,
 				BE023640EA5125DD8F119E30 /* StreakViewModel.swift */,
 				3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */,
+				D254F332F2202F307EC929E1 /* ThoiGianViewModel.swift */,
 				CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */,
 				AAA6ACAB0699AEADAD480218 /* TraThatViewModel.swift */,
 			);
@@ -300,8 +329,22 @@
 			children = (
 				DD163F9E0094D003BC976AFF /* Assets.xcassets */,
 				D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */,
+				E3D233835F13B6AF6996DFF4 /* presets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E3D233835F13B6AF6996DFF4 /* presets */ = {
+			isa = PBXGroup;
+			children = (
+				F64AF9BF7D6EA6B40308CEE3 /* ambient.js */,
+				E20B9F089F1D00BDF43131C2 /* cinematic.js */,
+				1E211697294F774097D35512 /* dark.js */,
+				A034A49C1C400E973D872ADB /* lofi.js */,
+				E13F88DDE292C085618D1157 /* nighttea.js */,
+				522597577310905CDE853832 /* piano.js */,
+			);
+			path = presets;
 			sourceTree = "<group>";
 		};
 		ED51AF698E09E6F5B5781AD1 /* Settings */ = {
@@ -361,6 +404,7 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					E4FFFF23E4D2E7D815CB50FD = {
+						DevelopmentTeam = QWP9AN675X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -391,7 +435,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D059D168AE3FD3D9223B6E37 /* Assets.xcassets in Resources */,
+				67AFCBAFC950DCAC50E9D973 /* ambient.js in Resources */,
+				AF9E9150D72E5CBA6889C675 /* cinematic.js in Resources */,
+				3D1C7968DC8EF103BCF2714A /* dark.js in Resources */,
 				33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */,
+				AE7D9C5658E278F85D64CCDD /* lofi.js in Resources */,
+				2AA7A5761C6A60C6CAD65061 /* nighttea.js in Resources */,
+				E4A22DBC2A6EA54CF5BB6475 /* piano.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,40 +455,43 @@
 				0246B9A74238114ACA04F5B0 /* AppDelegate.swift in Sources */,
 				7BF1BD0959E07EDBD8B77E8D /* AppUser.swift in Sources */,
 				CF694433CFAA76E26FCAF407 /* AppleDangNhapView.swift in Sources */,
+				61BE90B087173FE6A7DAA719 /* AudioService.swift in Sources */,
 				A144B4FD2D6BC8F2CCA7D67A /* AuthService.swift in Sources */,
 				187D6138CEB1746916730DA4 /* BreathingCircleView.swift in Sources */,
 				F5130B7DCD13E581CAA50728 /* BuongBoView.swift in Sources */,
 				5453DEB854867EA859F275FC /* BuongBoViewModel.swift in Sources */,
-				83CE08FF00216108D4E121B0 /* LaTraView.swift in Sources */,
 				CCF1D72CC697778C8E76BDB9 /* Constants.swift in Sources */,
 				AA1E5B7AB7F325354256AB1E /* GratitudeLog.swift in Sources */,
 				2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */,
 				8E03818EB8B862A5B189C024 /* HistoryDetailView.swift in Sources */,
-				A2B3C4D5E6F7A8B9C0D1E2F3 /* TeapotSceneView.swift in Sources */,
 				F2F10FE1D898FB7CDF897AF3 /* HistoryView.swift in Sources */,
 				A65B45DFDC3250FFAB6CBED1 /* KhoiTanView.swift in Sources */,
+				387E476EB97965B31DE89BAD /* LaTraView.swift in Sources */,
 				78D3D5398680920F455016AF /* LoginPromptView.swift in Sources */,
 				D52F81287820ADF0BD3A9499 /* NenDongView.swift in Sources */,
+				4B9A21A04CF95E5C4CB01670 /* NotificationPromptView.swift in Sources */,
+				415017C896441F9CCA8EF678 /* NotificationReminderService.swift in Sources */,
 				1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */,
-				3E2710BCC20B417CA9D4CC54 /* NotificationPromptView.swift in Sources */,
-				724AB3B852094ED58A354DD6 /* NotificationReminderService.swift in Sources */,
 				B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */,
 				CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */,
+				E701D8455FDBA23162EB1699 /* SamHoiView.swift in Sources */,
+				1444838C3716FBA4BFBECF9D /* SamHoiViewModel.swift in Sources */,
 				5A64A9C10B8ACEBB72FE761A /* SettingsView.swift in Sources */,
 				5B2A9E15043984CCA480F3F8 /* StreakViewModel.swift in Sources */,
 				45E500B0AB206E33C37CE104 /* SyncService.swift in Sources */,
+				0551B9168245D60257245C75 /* TeapotSceneView.swift in Sources */,
 				74FCA93C9BB92E71CF2E55F5 /* ThienThoView.swift in Sources */,
 				9FD742F16AE0D964410465BF /* ThienThoViewModel.swift in Sources */,
 				22782413F9E182E149FA267D /* ThoiGian.swift in Sources */,
+				5BE1D8AC92ADECFA143CA0E1 /* ThoiGianViewModel.swift in Sources */,
 				938FE51F6D1FE73A1B45D0A4 /* TichLuyView.swift in Sources */,
 				38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */,
 				1DDD4288154EC0D3B5623B55 /* TraThatView.swift in Sources */,
 				BAD334140FB745EDB763FB35 /* TraThatViewModel.swift in Sources */,
 				D61418AAEA852EE01F3588EB /* TramThienTraApp.swift in Sources */,
-				31E380032F9B03DD00B06B7A /* ThoiGianViewModel.swift in Sources */,
 				2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */,
 				2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */,
-				F6A1B2C3D4E5F60718293A4B /* ZenScreenHeader.swift in Sources */,
+				01694AF362D30E1EAAEE2E61 /* ZenScreenHeader.swift in Sources */,
 				F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,7 +593,6 @@
 				DEVELOPMENT_TEAM = QWP9AN675X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TramThienTra/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Trạm Thiền Trà";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,11 +600,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -627,7 +675,6 @@
 				DEVELOPMENT_TEAM = QWP9AN675X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TramThienTra/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Trạm Thiền Trà";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,11 +682,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tramthientra.app;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -647,7 +690,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = QWP9AN675X;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,7 +707,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = QWP9AN675X;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

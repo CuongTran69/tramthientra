@@ -27,6 +27,13 @@ final class NotificationReminderService: ObservableObject {
             return
         }
 
+        // Condition 1.5: User must NOT have explicitly disabled reminders in Settings
+        let userExplicitlyDisabled = defaults.bool(forKey: Constants.userDisabledReminderKey)
+        guard !userExplicitlyDisabled else {
+            shouldShowPrompt = false
+            return
+        }
+
         // Condition 2: Onboarding must be completed
         let hasCompletedOnboarding = defaults.bool(forKey: Constants.hasCompletedOnboardingKey)
         guard hasCompletedOnboarding else {

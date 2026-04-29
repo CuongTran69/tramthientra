@@ -302,10 +302,16 @@ struct GratitudeDropAnimationView: View {
                         .position(x: geo.size.width / 2, y: centerY)
                 }
 
-                // Water drop icon
-                Image(systemName: "drop.fill")
-                    .font(.system(size: 32, weight: .medium))
-                    .foregroundColor(ZenColor.zenSage.opacity(0.85))
+                // Water drop icon using custom organic shape
+                InkDropShape()
+                    .fill(
+                        LinearGradient(
+                            colors: [ZenColor.zenTeaLight, ZenColor.zenSage],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .frame(width: 32, height: 44)
                     .scaleEffect(dropScale)
                     .opacity(dropOpacity)
                     .position(x: geo.size.width / 2, y: centerY + dropOffsetY)
@@ -374,6 +380,7 @@ private struct RippleRingsView: View {
                     .frame(width: 80, height: 80)
                     .scaleEffect(animate ? 3.5 + CGFloat(ring) * 0.8 : 0.3)
                     .opacity(animate ? 0 : 0.8)
+                    .blur(radius: 2) // Added blur for a soft ink-wash ripple effect
                     .animation(
                         .easeOut(duration: 2.0).delay(Double(ring) * 0.25),
                         value: animate

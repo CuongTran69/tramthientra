@@ -19,6 +19,8 @@ enum Constants {
     static let notificationMinuteKey = "notificationMinute"
     static let lastNotificationPromptDateKey = "lastNotificationPromptDate"
     static let notificationPromptDismissCountKey = "notificationPromptDismissCount"
+    static let userDisabledReminderKey = "userExplicitlyDisabledReminder"
+    static let backgroundMusicEnabledKey = "backgroundMusicEnabled"
 
     // Limits
     static let maxGratitudeItems = 3

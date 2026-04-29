@@ -121,13 +121,13 @@ If GitNexus returns "Symbol not found" for a supported-language symbol, do not a
    Before the implementation loop, run GitNexus indexing so that `context` and `impact` commands return accurate results:
 
    ```
-   gitnexus analyze
+   gitnexus analyze --skip-agents-md
    ```
 
-   If the command fails with "not found", install first then retry:
+   If the command fails with "not found" or "unknown option '--skip-agents-md'", install the latest GitNexus then retry:
 
    ```
-   npm i -g gitnexus && gitnexus analyze
+   npm i -g gitnexus@latest && gitnexus analyze --skip-agents-md
    ```
 
    This is BLOCKING — do NOT start implementing until indexing completes. If you skip this step, every `gitnexus context` and `gitnexus impact` call in the implementation loop will return stale or empty results.
@@ -292,13 +292,13 @@ When implementing directly from conversation plan without an openspec change:
    Before editing, run the same one-time GitNexus indexing required in OpenSpec Change Mode:
 
    ```
-   gitnexus analyze
+   gitnexus analyze --skip-agents-md
    ```
 
-   If the command fails with "not found", install first then retry:
+   If the command fails with "not found" or "unknown option '--skip-agents-md'", install the latest GitNexus then retry:
 
    ```
-   npm i -g gitnexus && gitnexus analyze
+   npm i -g gitnexus@latest && gitnexus analyze --skip-agents-md
    ```
 
    For each task:

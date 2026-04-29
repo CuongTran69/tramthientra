@@ -38,6 +38,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject var thoiGianVM: ThoiGianViewModel
+    @AppStorage(Constants.backgroundMusicEnabledKey) private var backgroundMusicEnabled = true
     @StateObject private var notificationReminderService = NotificationReminderService()
 
     var body: some View {
@@ -53,9 +54,24 @@ struct ContentView: View {
                 await SyncService.shared.syncAllPending(modelContext: modelContext)
             }
         }
+        .onAppear {
+            if backgroundMusicEnabled {
+                AudioService.shared.playBackgroundMusic(preset: thoiGianVM.current.musicPreset)
+            }
+        }
+        .onChange(of: thoiGianVM.current) { _, newSlot in
+            if backgroundMusicEnabled {
+                AudioService.shared.changePreset(newSlot.musicPreset)
+            }
+        }
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .active {
                 notificationReminderService.checkAndUpdatePromptStatus()
+                if backgroundMusicEnabled {
+                    AudioService.shared.resumeBackgroundMusic()
+                }
+            } else if newPhase == .background {
+                AudioService.shared.stopBackgroundMusic()
             }
         }
         .sheet(isPresented: $notificationReminderService.shouldShowPrompt) {

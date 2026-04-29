@@ -28,13 +28,13 @@ You are a codebase analyst. Your job is to answer structural questions about the
 MANDATORY FIRST ACTION — before reading any code, before using codebase-retrieval, before doing ANYTHING else — run this command:
 
 ```
-gitnexus analyze
+gitnexus analyze --skip-agents-md
 ```
 
-If the command fails with "not found", install first then retry:
+If the command fails with "not found" or "unknown option '--skip-agents-md'", install the latest GitNexus then retry:
 
 ```
-npm i -g gitnexus && gitnexus analyze
+npm i -g gitnexus@latest && gitnexus analyze --skip-agents-md
 ```
 
 This is BLOCKING — do NOT proceed until indexing completes. If you find yourself using codebase-retrieval without having run this command first, STOP and run it now.

@@ -38,28 +38,3 @@ final class HapticService {
         notificationGenerator.notificationOccurred(.error)
     }
 }
-
-// MARK: - Sound service for droplet.wav
-
-final class SoundService {
-    static let shared = SoundService()
-    private var audioPlayer: AVAudioPlayer?
-
-    private init() {}
-
-    func playDroplet() {
-        guard let url = Bundle.main.url(forResource: "droplet", withExtension: "wav") else {
-            print("[Sound] droplet.wav not found in bundle")
-            return
-        }
-
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        } catch {
-            print("[Sound] Playback error: \(error.localizedDescription)")
-        }
-    }
-}

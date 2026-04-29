@@ -24,18 +24,15 @@ struct ZenTextField: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Background card layers — match ZenCard for consistency
-            RoundedRectangle(cornerRadius: 20)
-                .fill(.ultraThinMaterial)
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white.opacity(0.55))
-            // Focus ring: 2 pt sage on focus, soft hairline otherwise
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(
-                    isFocused ? ZenColor.zenSage : Color.white.opacity(0.6),
-                    lineWidth: isFocused ? 2 : 1
-                )
-                .animation(.easeInOut(duration: 0.2), value: isFocused)
+            // Thủy mặc / Giấy dó aesthetic: No heavy boxes.
+            // We use a subtle bottom line (like writing on traditional paper) instead of a full rounded rectangle.
+            VStack {
+                Spacer()
+                Rectangle()
+                    .fill(isFocused ? ZenColor.zenSage : ZenColor.zenBrown.opacity(0.15))
+                    .frame(height: isFocused ? 1.5 : 0.5)
+                    .animation(.easeInOut(duration: 0.2), value: isFocused)
+            }
 
             VStack(spacing: 0) {
                 if multiline {
@@ -100,8 +97,6 @@ struct ZenTextField: View {
                 }
             }
         }
-        .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
-        .shadow(color: ZenColor.zenBrown.opacity(0.06), radius: 14, x: 0, y: 6)
         // Minimum 44 pt height for accessibility touch target compliance
         .frame(minHeight: 44)
     }

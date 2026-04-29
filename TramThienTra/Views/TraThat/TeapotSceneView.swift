@@ -170,6 +170,9 @@ struct TeapotSceneView: View {
             let impact = UIImpactFeedbackGenerator(style: .medium)
             impact.impactOccurred()
             
+            // Play pour tea sound effect
+            AudioService.shared.playEffect(name: "pour_tea")
+            
             // Kick off the deterministic timeline animation
             startPourTime = Date()
             

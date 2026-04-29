@@ -1,11 +1,11 @@
 {
   "repoPath": "/Users/cuongtran/Project/ZenTea/TramThienTra",
-  "lastCommit": "c16b4df242d8a24bb07b9d08761a3f50cb2fca6e",
-  "indexedAt": "2026-04-28T07:28:54.711Z",
+  "lastCommit": "115d49315c19de8d8cb148b2f722f5dd522df125",
+  "indexedAt": "2026-04-29T03:34:13.488Z",
   "stats": {
-    "files": 83,
-    "nodes": 625,
-    "edges": 615,
+    "files": 94,
+    "nodes": 695,
+    "edges": 2245,
     "communities": 0,
     "processes": 0,
     "embeddings": 0

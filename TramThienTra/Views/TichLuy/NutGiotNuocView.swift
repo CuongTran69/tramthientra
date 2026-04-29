@@ -11,6 +11,36 @@ import SwiftUI
 // Honors `prefers-reduced-motion` by collapsing animations to a brief
 // opacity flash. Plays a light haptic on successful tap.
 
+// MARK: - Custom Organic Ink Drop Shape
+struct InkDropShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let w = rect.width
+        let h = rect.height
+        
+        path.move(to: CGPoint(x: w / 2, y: 0))
+        path.addCurve(
+            to: CGPoint(x: w, y: h * 0.65),
+            control1: CGPoint(x: w / 2, y: h * 0.3),
+            control2: CGPoint(x: w, y: h * 0.4)
+        )
+        path.addArc(
+            center: CGPoint(x: w / 2, y: h * 0.65),
+            radius: w / 2,
+            startAngle: .degrees(0),
+            endAngle: .degrees(180),
+            clockwise: false
+        )
+        path.addCurve(
+            to: CGPoint(x: w / 2, y: 0),
+            control1: CGPoint(x: 0, y: h * 0.4),
+            control2: CGPoint(x: w / 2, y: h * 0.3)
+        )
+        
+        return path
+    }
+}
+
 struct NutGiotNuocView: View {
     let isEnabled: Bool
     let action: () -> Void
@@ -68,9 +98,34 @@ struct NutGiotNuocView: View {
                         y: 4
                     )
                     .overlay(
-                        Image(systemName: icon)
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(isEnabled ? ZenColor.zenSage : Color.gray.opacity(0.6))
+                        Group {
+                            if icon == "drop.fill" {
+                                InkDropShape()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: isEnabled ? [ZenColor.zenTeaLight, ZenColor.zenSage] : [Color.gray.opacity(0.4), Color.gray.opacity(0.6)],
+                                            startPoint: .top,
+                                            endPoint: .bottom
+                                        )
+                                    )
+                                    .frame(width: 24, height: 32)
+                            } else if icon == "leaf.fill" {
+                                TeaLeafShape()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: isEnabled ? [ZenColor.zenTeaLight, ZenColor.zenSage] : [Color.gray.opacity(0.4), Color.gray.opacity(0.6)],
+                                            startPoint: .top,
+                                            endPoint: .bottom
+                                        )
+                                    )
+                                    .frame(width: 24, height: 32)
+                                    .rotationEffect(.degrees(15)) // Slight tilt for natural leaf look
+                            } else {
+                                Image(systemName: icon)
+                                    .font(.system(size: 28, weight: .medium))
+                                    .foregroundColor(isEnabled ? ZenColor.zenSage : Color.gray.opacity(0.6))
+                            }
+                        }
                     )
                     .scaleEffect((isPressed && !reduceMotion) ? 0.88 : 1.0)
             }
@@ -123,7 +178,7 @@ struct NutGiotNuocView: View {
     private func triggerAction() {
         guard isEnabled else { return }
         HapticService.shared.playLight()
-        SoundService.shared.playDroplet()
+        AudioService.shared.playEffect(name: "click")
 
         if reduceMotion {
             action()

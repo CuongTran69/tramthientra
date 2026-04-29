@@ -18,24 +18,26 @@ struct ThienThoView: View {
 
                 Spacer()
 
-                // Breathing circle + cycle counter wrapped in ZenCard
-                ZenCard {
-                    VStack(spacing: 0) {
-                        BreathingCircleView(
-                            phase: viewModel.currentPhase,
-                            progress: viewModel.phaseProgress,
-                            isRunning: viewModel.isRunning
-                        )
+                // Breathing circle + cycle counter
+                VStack(spacing: 24) {
+                    BreathingCircleView(
+                        phase: viewModel.currentPhase,
+                        progress: viewModel.phaseProgress,
+                        isRunning: viewModel.isRunning
+                    )
 
-                        // Cycle counter — shown only when a session is active
-                        if !viewModel.cycleText.isEmpty {
-                            Text(viewModel.cycleText)
-                                .font(ZenFont.subheadline())
-                                .foregroundColor(thoiGianVM.current.textSecondary)
-                                .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
-                                .padding(.top, 16)
-                                .accessibilityLabel(viewModel.cycleText)
-                        }
+                    // Cycle counter — shown only when a session is active
+                    if !viewModel.cycleText.isEmpty {
+                        Text(viewModel.cycleText)
+                            .font(ZenFont.subheadline())
+                            .foregroundColor(thoiGianVM.current.textSecondary)
+                            .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
+                            .accessibilityLabel(viewModel.cycleText)
+                    } else {
+                        // Invisible placeholder to keep layout stable when empty
+                        Text(" ")
+                            .font(ZenFont.subheadline())
+                            .opacity(0)
                     }
                 }
                 .padding(.horizontal, 20)

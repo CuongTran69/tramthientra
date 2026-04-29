@@ -8,6 +8,7 @@ struct SettingsView: View {
     @AppStorage(Constants.dailyReminderEnabledKey) private var dailyReminder = false
     @AppStorage(Constants.notificationHourKey) private var notificationHour = Constants.notificationHour
     @AppStorage(Constants.notificationMinuteKey) private var notificationMinute = Constants.notificationMinute
+    @AppStorage(Constants.backgroundMusicEnabledKey) private var backgroundMusicEnabled = true
     @State private var isSignedIn = false
     @State private var showSignOutAlert = false
 
@@ -77,11 +78,13 @@ struct SettingsView: View {
                                 }
                                 .onChange(of: dailyReminder) { _, newValue in
                                     if newValue {
+                                        UserDefaults.standard.set(false, forKey: Constants.userDisabledReminderKey)
                                         Task {
                                             await NotificationService.shared.requestAuthorization()
                                             NotificationService.shared.scheduleDailyReminder(hour: notificationHour, minute: notificationMinute)
                                         }
                                     } else {
+                                        UserDefaults.standard.set(true, forKey: Constants.userDisabledReminderKey)
                                         NotificationService.shared.cancelAllPendingNotifications()
                                     }
                                 }
@@ -124,6 +127,54 @@ struct SettingsView: View {
                                     .accessibilityLabel("Thời gian nhắc nhở")
                                     .accessibilityHint("Chọn thời gian nhận thông báo hàng ngày")
                                 }
+                            }
+                        }
+
+                        // Audio card
+                        ZenCard {
+                            VStack(alignment: .leading, spacing: 16) {
+                                // Section header
+                                Text("ÂM THANH")
+                                    .font(ZenFont.caption())
+                                    .tracking(1.5)
+                                    .foregroundColor(thoiGianVM.current.textSecondary)
+                                    .padding(.bottom, 4)
+
+                                // Background music toggle
+                                HStack(spacing: 16) {
+                                    Image(systemName: "speaker.wave.2.fill")
+                                        .font(.system(size: 24))
+                                        .foregroundColor(ZenColor.zenSage)
+                                        .frame(width: 32)
+
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Nhạc nền")
+                                            .font(ZenFont.body())
+                                            .foregroundColor(thoiGianVM.current.textPrimary)
+                                        Text("Nhạc thiền tự động theo khung giờ")
+                                            .font(ZenFont.caption())
+                                            .foregroundColor(thoiGianVM.current.textSecondary)
+                                    }
+
+                                    Spacer()
+
+                                    Toggle("", isOn: $backgroundMusicEnabled)
+                                        .labelsHidden()
+                                        .tint(ZenColor.zenSage)
+                                }
+                                .onChange(of: backgroundMusicEnabled) { _, newValue in
+                                    if newValue {
+                                        AudioService.shared.playBackgroundMusic(preset: thoiGianVM.current.musicPreset)
+                                    } else {
+                                        AudioService.shared.stopBackgroundMusic()
+                                    }
+                                }
+                                .accessibilityLabel("Nhạc nền")
+                                .accessibilityHint(
+                                    backgroundMusicEnabled
+                                        ? "Đang bật — chạm để tắt nhạc nền"
+                                        : "Đang tắt — chạm để bật nhạc nền"
+                                )
                             }
                         }
 
@@ -226,6 +277,9 @@ struct SettingsView: View {
                     .padding(.horizontal, 20)
                 }
             }
+        }
+        .onAppear {
+            isSignedIn = AuthService.shared.getCurrentUserId() != nil
         }
         .alert("Đăng xuất", isPresented: $showSignOutAlert) {
             Button("Đăng xuất", role: .destructive) {
