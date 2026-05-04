@@ -19,7 +19,9 @@
 		2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */; };
 		2BB2F5E3A35240543C9B4E4F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC771014AD1F6DBDFE5BBF3 /* HapticService.swift */; };
 		2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBAE530579BB6E5AB26C81 /* ZenButton.swift */; };
-		33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */; };
+		31E380162FA82C5100B06B7A /* ZenSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E380152FA82C5100B06B7A /* ZenSquareButton.swift */; };
+		31E3801A2FA83BDD00B06B7A /* HuongTramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E380192FA83BDD00B06B7A /* HuongTramView.swift */; };
+		31E3801C2FA83F7800B06B7A /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 31E3801B2FA83F7800B06B7A /* bell.mp3 */; };
 		38056F0075CBA4252B3ED06C /* TichLuyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D76F13DF75E189206793F /* TichLuyViewModel.swift */; };
 		387E476EB97965B31DE89BAD /* LaTraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD018DBD7C7A23BB84648D6 /* LaTraView.swift */; };
 		3D1C7968DC8EF103BCF2714A /* dark.js in Resources */ = {isa = PBXBuildFile; fileRef = 1E211697294F774097D35512 /* dark.js */; };
@@ -78,6 +80,9 @@
 		1E211697294F774097D35512 /* dark.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = dark.js; sourceTree = "<group>"; };
 		1FB5D810D6C6589ED10474D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21A5D5EEF66C34A3E948966C /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		31E380152FA82C5100B06B7A /* ZenSquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenSquareButton.swift; sourceTree = "<group>"; };
+		31E380192FA83BDD00B06B7A /* HuongTramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuongTramView.swift; sourceTree = "<group>"; };
+		31E3801B2FA83F7800B06B7A /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDangNhapView.swift; sourceTree = "<group>"; };
 		3DD2A0CA7F0981212D2DB59A /* ZenCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenCard.swift; sourceTree = "<group>"; };
 		3F6F303B72E97CFAED548CEB /* ThienThoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoViewModel.swift; sourceTree = "<group>"; };
@@ -113,7 +118,6 @@
 		CEDC0689CE9E9AA8949ACD69 /* ThienThoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienThoView.swift; sourceTree = "<group>"; };
 		D254F332F2202F307EC929E1 /* ThoiGianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoiGianViewModel.swift; sourceTree = "<group>"; };
 		D31CE06981925B6E2448C76B /* NenDongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NenDongView.swift; sourceTree = "<group>"; };
-		D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = droplet.wav; sourceTree = "<group>"; };
 		DA6F71A3FCB1405CE7555F12 /* TraThatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraThatView.swift; sourceTree = "<group>"; };
 		DAA80B8FACC9F2FE51CC9188 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		DD163F9E0094D003BC976AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		1C2F8887A33833189A876D73 /* SamHoi */ = {
 			isa = PBXGroup;
 			children = (
+				31E380192FA83BDD00B06B7A /* HuongTramView.swift */,
 				1563AECD04C055124530C1B7 /* SamHoiView.swift */,
 			);
 			path = SamHoi;
@@ -194,6 +199,7 @@
 		49FD87D76F9F57B3A656A268 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				31E380152FA82C5100B06B7A /* ZenSquareButton.swift */,
 				35EE69D9E30A352CF77B7E3B /* AppleDangNhapView.swift */,
 				DFD018DBD7C7A23BB84648D6 /* LaTraView.swift */,
 				7F22A0D104486E778E63D627 /* LoginPromptView.swift */,
@@ -328,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				DD163F9E0094D003BC976AFF /* Assets.xcassets */,
-				D9BB4B1AA7E1308BDFEBE860 /* droplet.wav */,
+				31E3801B2FA83F7800B06B7A /* bell.mp3 */,
 				E3D233835F13B6AF6996DFF4 /* presets */,
 			);
 			path = Resources;
@@ -436,9 +442,9 @@
 			files = (
 				D059D168AE3FD3D9223B6E37 /* Assets.xcassets in Resources */,
 				67AFCBAFC950DCAC50E9D973 /* ambient.js in Resources */,
+				31E3801C2FA83F7800B06B7A /* bell.mp3 in Resources */,
 				AF9E9150D72E5CBA6889C675 /* cinematic.js in Resources */,
 				3D1C7968DC8EF103BCF2714A /* dark.js in Resources */,
-				33FF5BC8BE60232CD0644792 /* droplet.wav in Resources */,
 				AE7D9C5658E278F85D64CCDD /* lofi.js in Resources */,
 				2AA7A5761C6A60C6CAD65061 /* nighttea.js in Resources */,
 				E4A22DBC2A6EA54CF5BB6475 /* piano.js in Resources */,
@@ -473,6 +479,7 @@
 				415017C896441F9CCA8EF678 /* NotificationReminderService.swift in Sources */,
 				1DC020740CD3D8BBD8C66E31 /* NotificationService.swift in Sources */,
 				B4D3D9BEDBFA403B2E7EFA11 /* NutGiotNuocView.swift in Sources */,
+				31E3801A2FA83BDD00B06B7A /* HuongTramView.swift in Sources */,
 				CBF4551E39686C008EB1E2DC /* OnboardingView.swift in Sources */,
 				E701D8455FDBA23162EB1699 /* SamHoiView.swift in Sources */,
 				1444838C3716FBA4BFBECF9D /* SamHoiViewModel.swift in Sources */,
@@ -492,6 +499,7 @@
 				2DAF545C88410EA7DDFE9323 /* ZenButton.swift in Sources */,
 				2B543D1D5A30AC79DB265CA4 /* ZenCard.swift in Sources */,
 				01694AF362D30E1EAAEE2E61 /* ZenScreenHeader.swift in Sources */,
+				31E380162FA82C5100B06B7A /* ZenSquareButton.swift in Sources */,
 				F44FF8E56F3634171E730CE4 /* ZenTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

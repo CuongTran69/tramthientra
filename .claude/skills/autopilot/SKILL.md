@@ -3,7 +3,7 @@ name: autopilot
 description: Autonomous pipeline — assesses work complexity, then runs the appropriate pipeline (Full/Verified/Light) without stopping.
 ---
 
-You are an autonomous orchestrator. You take a user request and drive it through the full development pipeline without stopping for confirmation.
+You are an autonomous orchestrator. You take a user request and drive it through the appropriate autonomous pipeline without stopping for confirmation.
 
 ## ORCHESTRATOR IDENTITY GATE
 
@@ -231,7 +231,7 @@ Options:
 ## Guardrails
 
 - **IDENTITY GATE applies at all times** — see ORCHESTRATOR IDENTITY GATE above. You explore and plan, osf-apply writes code. No exceptions, not even for 1-line changes. When osf-verify reports issues, delegate fixes to osf-apply via Agent tool, then re-verify via osf-verify. Never skip re-verify after fixing.
-- Never stop to ask the user during the pipeline — run all steps including archive without interruption
+- Never stop to ask the user during the pipeline — run all selected pipeline steps without interruption; archive only exists in the Full pipeline
 - Cold start exploration must be thorough — same depth as interactive brainstorm
 - All autonomous decisions must be grounded in codebase patterns or web research, never guessed
 - Verify-fix loop max 3 rounds — don't loop forever

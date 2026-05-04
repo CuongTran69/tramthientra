@@ -28,7 +28,7 @@ final class SamHoiViewModel: ObservableObject {
     func releaseAndDismiss() async {
         isReleasing = true
         // Animation duration is handled by the view; this VM just manages state.
-        try? await Task.sleep(nanoseconds: 2_500_000_000) // ~2.5s
+        try? await Task.sleep(nanoseconds: 6_000_000_000) // ~6.0s
         text = ""
         vowText = ""
         isReleasing = false

@@ -74,15 +74,32 @@ struct SamHoiView: View {
             VStack(spacing: 0) {
                 ZenScreenHeader(title: "Phòng Sám Hối", dismissAction: { dismiss() })
 
-                // Segmented Picker for tab switching
-                Picker("Chọn mục", selection: $viewModel.selectedTab) {
+                // Custom Zen Tab Switcher
+                HStack(spacing: 32) {
                     ForEach(SamHoiTab.allCases, id: \.self) { tab in
-                        Text(tab.rawValue).tag(tab)
+                        VStack(spacing: 6) {
+                            Text(tab.rawValue)
+                                .font(viewModel.selectedTab == tab ? ZenFont.headline() : ZenFont.body())
+                                .foregroundColor(viewModel.selectedTab == tab ? thoiGianVM.current.textPrimary : thoiGianVM.current.textSecondary)
+                                .animation(.easeInOut(duration: 0.2), value: viewModel.selectedTab)
+                            
+                            // Indicator
+                            Rectangle()
+                                .fill(viewModel.selectedTab == tab ? thoiGianVM.current.glowTint : Color.clear)
+                                .frame(height: 2)
+                                .cornerRadius(1)
+                                .padding(.horizontal, 8)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                viewModel.selectedTab = tab
+                            }
+                        }
                     }
                 }
-                .pickerStyle(.segmented)
                 .padding(.horizontal, 20)
-                .padding(.top, 12)
+                .padding(.top, 16)
                 .accessibilityLabel("Chuyển đổi giữa Sám hối và Kinh tụng")
                 .accessibilityHint("Chọn mục bạn muốn xem")
 
@@ -114,7 +131,7 @@ struct SamHoiView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     // Rotating six-sense prompt
                     Text(Self.sixSensePrompts[currentPromptIndex])
-                        .font(ZenFont.subheadline())
+                        .font(ZenFont.title())
                         .foregroundColor(thoiGianVM.current.textPrimary)
                         .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                         .multilineTextAlignment(.leading)
@@ -176,8 +193,8 @@ struct SamHoiView: View {
             if viewModel.isReleasing {
                 HStack {
                     Spacer()
-                    KhoiTanView()
-                        .frame(width: 200, height: 200)
+                    HuongTramView()
+                        .frame(width: 200, height: 250)
                         .transition(.opacity)
                         .accessibilityHidden(true)
                     Spacer()
@@ -209,7 +226,7 @@ struct SamHoiView: View {
 
     private var kinhTungTabContent: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .center, spacing: 24) {
                 // Sutra title
                 Text("Sám Hối Sáu Căn")
                     .font(ZenFont.title())
@@ -225,14 +242,23 @@ struct SamHoiView: View {
                     .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
                     .frame(maxWidth: .infinity, alignment: .center)
 
+                Spacer().frame(height: 8)
+
                 // Six sutra sections
-                ForEach(Self.sutraSections, id: \.title) { section in
+                ForEach(Array(Self.sutraSections.enumerated()), id: \.element.title) { index, section in
                     sutraSectionView(section)
+                    
+                    if index < Self.sutraSections.count - 1 {
+                        Text("• ✤ •")
+                            .font(.system(size: 14))
+                            .foregroundColor(thoiGianVM.current.textSecondary.opacity(0.5))
+                            .padding(.vertical, 8)
+                    }
                 }
             }
             .padding(.horizontal, 20)
             .padding(.top, 16)
-            .padding(.bottom, 32)
+            .padding(.bottom, 48)
         }
     }
 
@@ -240,7 +266,7 @@ struct SamHoiView: View {
     // MARK: - Sutra Section View
 
     private func sutraSectionView(_ section: SutraSection) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .center, spacing: 12) {
             Text(section.title)
                 .font(ZenFont.headline())
                 .foregroundColor(thoiGianVM.current.textPrimary)
@@ -251,7 +277,8 @@ struct SamHoiView: View {
                 .font(ZenFont.body())
                 .foregroundColor(thoiGianVM.current.textSecondary)
                 .animation(.easeInOut(duration: 2.0), value: thoiGianVM.current)
-                .lineSpacing(6)
+                .lineSpacing(8)
+                .multilineTextAlignment(.center)
                 .accessibilityAddTraits(.isStaticText)
         }
     }
@@ -381,6 +408,9 @@ struct SamHoiView: View {
         // Pick a random quote
         currentQuoteIndex = Int.random(in: 0..<Self.repentanceQuotes.count)
 
+        // Phát tiếng chuông gia trì khi bắt đầu sám hối
+        AudioService.shared.playEffect(name: "bell")
+
         // Button fades out first
         withAnimation(.easeInOut(duration: 0.3)) {
             buttonVisible = false
@@ -399,26 +429,29 @@ struct SamHoiView: View {
             }
         }
 
-        // Show quote after smoke finishes (~2.5s release + delays)
-        let quoteStartTime: Double = useReducedMotion ? 0.5 : 3.2
+        // --- 15-Second Bell Sequence Timing ---
+        
+        // Show quote around the time smoke finishes (at t = 6.0s)
+        let quoteStartTime: Double = useReducedMotion ? 0.5 : 6.0
         DispatchQueue.main.asyncAfter(deadline: .now() + quoteStartTime) {
-            withAnimation(.easeInOut(duration: 0.7)) {
+            // Fade in quote over 1.5s (fully visible at t=7.5s)
+            withAnimation(.easeInOut(duration: 1.5)) {
                 showQuote = true
             }
         }
 
-        // Dismiss quote after hold
-        let quoteDuration = 3.0
-        let quoteFadeOut = 0.7
-        DispatchQueue.main.asyncAfter(deadline: .now() + quoteStartTime + 0.7 + quoteDuration) {
+        // Dismiss quote (hold until t=13.0s, then fade out over 2.0s to match bell end at t=15.0s)
+        let quoteDuration = 5.5 // 7.5s - 13.0s
+        let quoteFadeOut = 2.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + quoteStartTime + 1.5 + quoteDuration) {
             withAnimation(.easeInOut(duration: quoteFadeOut)) {
                 showQuote = false
             }
         }
 
-        // Form and button fade back in
-        DispatchQueue.main.asyncAfter(deadline: .now() + quoteStartTime + 0.7 + quoteDuration + quoteFadeOut + 0.2) {
-            withAnimation(.easeInOut(duration: 0.7)) {
+        // Form and button fade back in (starts at t=15.2s, right after bell finishes ringing)
+        DispatchQueue.main.asyncAfter(deadline: .now() + quoteStartTime + 1.5 + quoteDuration + quoteFadeOut + 0.2) {
+            withAnimation(.easeInOut(duration: 0.8)) {
                 formVisible = true
                 buttonVisible = true
             }

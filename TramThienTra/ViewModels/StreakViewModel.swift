@@ -34,12 +34,29 @@ final class StreakViewModel: ObservableObject {
     }
 
     func incrementStreak() {
-        streak += 1
+        if let lastDate = UserDefaults.standard.object(forKey: Constants.lastGratitudeDateKey) as? Date {
+            if isToday(lastDate) {
+                return
+            } else if isYesterday(lastDate) {
+                streak += 1
+            } else {
+                streak = 1
+            }
+        } else {
+            streak = 1
+        }
         UserDefaults.standard.set(streak, forKey: Constants.streakKey)
+        UserDefaults.standard.set(Date(), forKey: Constants.lastGratitudeDateKey)
         checkStreak()
     }
 
     func checkStreak() {
+        if let lastDate = UserDefaults.standard.object(forKey: Constants.lastGratitudeDateKey) as? Date {
+            if !isToday(lastDate) && !isYesterday(lastDate) {
+                streak = 0
+                UserDefaults.standard.set(streak, forKey: Constants.streakKey)
+            }
+        }
         switch streak {
         case 0: stage = .hatTra
         case 1...3: stage = .mamTra
@@ -48,5 +65,13 @@ final class StreakViewModel: ObservableObject {
         case 15...29: stage = .laXanh
         default: stage = streak >= 30 ? .traChin : .hatTra
         }
+    }
+
+    private func isToday(_ date: Date) -> Bool {
+        Calendar.current.isDateInToday(date)
+    }
+
+    private func isYesterday(_ date: Date) -> Bool {
+        Calendar.current.isDateInYesterday(date)
     }
 }

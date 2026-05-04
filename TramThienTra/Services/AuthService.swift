@@ -30,7 +30,6 @@ final class AuthService: AuthServiceProtocol {
 
     func signOut() {
         KeychainHelper.delete(key: userIdKey)
-        UserDefaults.standard.removeObject(forKey: Constants.hasCompletedOnboardingKey)
     }
 
     func handleSignInSuccess(userId: String) {

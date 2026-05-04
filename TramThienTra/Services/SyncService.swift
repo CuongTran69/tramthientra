@@ -43,8 +43,6 @@ actor SyncService {
                     throw SyncError.serverError
                 }
 
-                // Mark as synced
-                log.synced = true
                 return
             } catch {
                 attempt += 1
@@ -68,6 +66,7 @@ actor SyncService {
             for log in unsyncedLogs {
                 do {
                     try await syncLog(log)
+                    log.synced = true
                     try modelContext.save()
                 } catch {
                     print("[Sync] Migration failed for log \(log.id): \(error)")

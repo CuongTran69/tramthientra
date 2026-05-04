@@ -187,15 +187,11 @@ struct TichLuyView: View {
 
     private func performSave() {
         dismissKeyboard()
-
-        // Start celebration immediately — form fades out first
-        startCelebration()
-
-        // Save data in the background while animation plays
         Task {
             do {
                 try await viewModel.saveGratitude(modelContext: modelContext)
                 streakViewModel.incrementStreak()
+                startCelebration()
             } catch {
                 print("[TichLuy] performSave failed: \(error)")
             }

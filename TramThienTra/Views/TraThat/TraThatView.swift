@@ -11,6 +11,7 @@ struct TraThatView: View {
     @State private var showTichLuy = false
     @State private var showBuongBo = false
     @State private var showThienTho = false
+    @State private var showSamHoi = false
 
     var body: some View {
         ZStack {
@@ -82,29 +83,30 @@ struct TraThatView: View {
                 Spacer().frame(height: 16)
 
                 // Bottom action dock — glassmorphism container
-                VStack(spacing: 10) {
-                    ZenButton("Biết ơn", variant: .primary, icon: "drop.fill") {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                    ZenSquareButton("Biết ơn", variant: .primary, icon: "drop.fill") {
                         showTichLuy = true
                     }
                     .accessibilityLabel("Biết ơn")
                     .accessibilityHint("Mở màn hình ghi lại điều biết ơn hôm nay")
-                    .frame(maxWidth: .infinity)
 
-                    HStack(spacing: 10) {
-                        ZenButton("Buông bỏ", variant: .secondary, icon: "leaf.fill") {
-                            showBuongBo = true
-                        }
-                        .accessibilityLabel("Buông bỏ")
-                        .accessibilityHint("Mở màn hình viết ra và buông bỏ những lo âu")
-                        .frame(maxWidth: .infinity)
-
-                        ZenButton("Thiền Thở", variant: .secondary, icon: "wind") {
-                            showThienTho = true
-                        }
-                        .accessibilityLabel("Thiền Thở")
-                        .accessibilityHint("Mở màn hình thiền thở")
-                        .frame(maxWidth: .infinity)
+                    ZenSquareButton("Buông bỏ", variant: .secondary, icon: "leaf.fill") {
+                        showBuongBo = true
                     }
+                    .accessibilityLabel("Buông bỏ")
+                    .accessibilityHint("Mở màn hình viết ra và buông bỏ những lo âu")
+
+                    ZenSquareButton("Thiền Thở", variant: .secondary, icon: "wind") {
+                        showThienTho = true
+                    }
+                    .accessibilityLabel("Thiền Thở")
+                    .accessibilityHint("Mở màn hình thiền thở")
+
+                    ZenSquareButton("Sám hối", variant: .secondary, icon: "hands.sparkles.fill") {
+                        showSamHoi = true
+                    }
+                    .accessibilityLabel("Sám hối")
+                    .accessibilityHint("Mở phòng sám hối để quán chiếu và sám hối qua sáu căn")
                 }
                 .padding(16)
                 .background {
@@ -150,6 +152,10 @@ struct TraThatView: View {
         }
         .fullScreenCover(isPresented: $showThienTho) {
             ThienThoView()
+                .environmentObject(thoiGianVM)
+        }
+        .fullScreenCover(isPresented: $showSamHoi) {
+            SamHoiView()
                 .environmentObject(thoiGianVM)
         }
     }
